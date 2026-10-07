@@ -1,0 +1,180 @@
+{
+  "size": {
+    "avatar-lg": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT"
+        ],
+        "com.figma.variableId": "VariableID:218:706",
+        "com.figma.codeSyntax": {
+          "WEB": "size-avatar-lg"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{size.6xl}"
+    },
+    "avatar-md": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT"
+        ],
+        "com.figma.variableId": "VariableID:218:707",
+        "com.figma.codeSyntax": {
+          "WEB": "size-avatar-md"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{size.4xl}"
+    },
+    "avatar-sm": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT"
+        ],
+        "com.figma.variableId": "VariableID:218:708",
+        "com.figma.codeSyntax": {
+          "WEB": "size-avatar-sm"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{size.3xl}"
+    },
+    "control-lg": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT"
+        ],
+        "com.figma.variableId": "VariableID:218:709",
+        "com.figma.codeSyntax": {
+          "WEB": "size-control-lg"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{size.6xl}"
+    },
+    "control-md": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT"
+        ],
+        "com.figma.variableId": "VariableID:218:710",
+        "com.figma.codeSyntax": {
+          "WEB": "size-control-md"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{size.4xl}"
+    },
+    "control-sm": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT"
+        ],
+        "com.figma.variableId": "VariableID:218:711",
+        "com.figma.codeSyntax": {
+          "WEB": "size-control-sm"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{size.3xl}"
+    },
+    "icon-lg": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT"
+        ],
+        "com.figma.variableId": "VariableID:218:712",
+        "com.figma.codeSyntax": {
+          "WEB": "size-icon-lg"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{size.xl}"
+    },
+    "icon-md": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT"
+        ],
+        "com.figma.variableId": "VariableID:218:713",
+        "com.figma.codeSyntax": {
+          "WEB": "size-icon-md"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{size.lg}"
+    },
+    "icon-sm": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT"
+        ],
+        "com.figma.variableId": "VariableID:218:714",
+        "com.figma.codeSyntax": {
+          "WEB": "size-icon-sm"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{size.md}"
+    },
+    "icon-xl": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT"
+        ],
+        "com.figma.variableId": "VariableID:218:715",
+        "com.figma.codeSyntax": {
+          "WEB": "size-icon-xl"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{size.3xl}"
+    },
+    "icon-xs": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT"
+        ],
+        "com.figma.variableId": "VariableID:218:716",
+        "com.figma.codeSyntax": {
+          "WEB": "size-icon-xs"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{size.sm}"
+    }
+  }
+}

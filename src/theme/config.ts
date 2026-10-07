@@ -1,0 +1,222 @@
+import darkAdapter from "@tokens/dark.shadcn.semantic.json"
+import extensionsAdapter from "@tokens/shadcn.extensions.json"
+import lightAdapter from "@tokens/shadcn.semantic.json"
+
+import focusRingCss from "@/styles/focus-ring.css?raw"
+import { formatShadcnThemeCss } from "@/theme/shadcn-theme.mjs"
+import tailwindThemeCss from "@/tokens/generated/tailwind.theme.css?raw"
+
+import { STYLES } from "@/registry/styles"
+import { cssVarFor, getAliasChain, getToken } from "@/theme/catalog"
+import {
+  ADAPTER_GLOBAL_VARS,
+  COLOR_VARS,
+  GLOBAL_VARS,
+  SHADOW_GROUP,
+  type ThemeVar,
+} from "@/theme/schema"
+
+export type StyleName = (typeof STYLES)[number]["name"]
+export type Mode = "light" | "dark"
+export type PreviewItem = "preview" | "preview-02" | "components" | "charts" | "tokens"
+
+/** shadcn variable name -> design token path, e.g. primary -> color.bg-action-primary */
+export type Aliases = Record<string, string>
+
+export type ThemeConfig = {
+  style: StyleName
+  light: Aliases
+  dark: Aliases
+  global: Aliases
+}
+
+type AdapterDocument = Record<string, unknown>
+
+/** Reads `{ "primary": { "$value": "{color.bg-action-primary}" } }` into aliases. */
+function readAdapter(document: AdapterDocument): Aliases {
+  const aliases: Aliases = {}
+
+  for (const [name, token] of Object.entries(document)) {
+    if (name.startsWith("$") || !token || typeof token !== "object") continue
+
+    const value = (token as { $value?: unknown }).$value
+    if (typeof value === "string" && /^\{[^}]+\}$/.test(value)) {
+      aliases[name] = value.slice(1, -1)
+    }
+  }
+
+  return aliases
+}
+
+function pick(aliases: Aliases, vars: ThemeVar[]) {
+  return Object.fromEntries(
+    vars.filter((v) => aliases[v.name]).map((v) => [v.name, aliases[v.name]])
+  )
+}
+
+const lightAliases = readAdapter(lightAdapter)
+
+/** The theme as committed in ./tokens — what "Reset" returns to. */
+export const DEFAULT_CONFIG: ThemeConfig = {
+  style: "nova",
+  light: pick(lightAliases, COLOR_VARS),
+  dark: pick(readAdapter(darkAdapter), COLOR_VARS),
+  global: {
+    ...pick(lightAliases, GLOBAL_VARS),
+    ...pick(readAdapter(extensionsAdapter), GLOBAL_VARS),
+  },
+}
+
+export function getAlias(config: ThemeConfig, v: ThemeVar, mode: Mode) {
+  return v.scope === "global" ? config.global[v.name] : config[mode][v.name]
+}
+
+export function setAlias(
+  config: ThemeConfig,
+  v: ThemeVar,
+  mode: Mode,
+  path: string
+): ThemeConfig {
+  return v.scope === "global"
+    ? { ...config, global: { ...config.global, [v.name]: path } }
+    : { ...config, [mode]: { ...config[mode], [v.name]: path } }
+}
+
+function resolveToken(path: string) {
+  const chain = getAliasChain(path)
+  return {
+    cssVar: cssVarFor(path),
+    chain: chain.length ? chain.map((token) => token.path) : [path],
+    value: chain.length ? String(chain.at(-1)!.value) : undefined,
+  }
+}
+
+function formatMapping(config: ThemeConfig, options: { boost?: boolean; header: boolean }) {
+  return formatShadcnThemeCss({
+    light: config.light,
+    dark: config.dark,
+    global: config.global,
+    resolve: resolveToken,
+    header: options.header,
+    selectors: options.boost ? { root: "html:root", dark: "html:root.dark" } : undefined,
+  })
+}
+
+/**
+ * Live CSS for the preview iframe. `boost` raises selector specificity so
+ * runtime overrides beat the statically imported shadcn.theme.css regardless
+ * of stylesheet order.
+ */
+export function buildThemeCss(config: ThemeConfig, { boost = false } = {}) {
+  return formatMapping(config, { boost, header: false })
+}
+
+/** The shadcn theme token mapping file (same output as npm run tokens:build). */
+export function buildShadcnThemeCss(config: ThemeConfig) {
+  return formatMapping(config, { header: true })
+}
+
+function adapterDocument(
+  description: string,
+  aliases: Aliases,
+  vars: ThemeVar[]
+) {
+  const document: Record<string, unknown> = { $description: description }
+
+  for (const v of vars) {
+    const path = aliases[v.name]
+    if (!path) continue
+    document[v.name] = {
+      $type: getToken(path)?.type ?? "string",
+      $value: `{${path}}`,
+    }
+  }
+
+  return `${JSON.stringify(document, null, 2)}\n`
+}
+
+export const ADAPTER_FILE_NAMES = {
+  light: "shadcn.semantic.json",
+  dark: "dark.shadcn.semantic.json",
+  extensions: "shadcn.extensions.json",
+} as const
+
+/** The three alias files, in the same shape as ./tokens. */
+export function buildAdapterFiles(config: ThemeConfig) {
+  const adapterGlobals = GLOBAL_VARS.filter((v) => ADAPTER_GLOBAL_VARS.has(v.name))
+  const extensionGlobals = GLOBAL_VARS.filter((v) => !ADAPTER_GLOBAL_VARS.has(v.name))
+
+  return {
+    [ADAPTER_FILE_NAMES.light]: adapterDocument(
+      (lightAdapter as AdapterDocument).$description as string,
+      { ...config.light, ...config.global },
+      [...COLOR_VARS, ...adapterGlobals]
+    ),
+    [ADAPTER_FILE_NAMES.dark]: adapterDocument(
+      (darkAdapter as AdapterDocument).$description as string,
+      config.dark,
+      COLOR_VARS
+    ),
+    [ADAPTER_FILE_NAMES.extensions]: adapterDocument(
+      (extensionsAdapter as AdapterDocument).$description as string,
+      config.global,
+      extensionGlobals
+    ),
+  }
+}
+
+// Mirrors src/styles/theme.css: shadcn variables -> Tailwind utilities.
+const THEME_INLINE = `@theme inline {
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+${COLOR_VARS.map((v) => `  --color-${v.name}: var(--${v.name});`).join("\n")}
+}
+
+/* Same-named keys are inlined without emitting --x: var(--x). */
+@theme inline reference {
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --shadow: var(--shadow-sm);
+${SHADOW_GROUP.vars.map((v) => `  --${v.name}: var(--${v.name});`).join("\n")}
+}`
+
+/** Drop-in globals.css for a shadcn project that already loads tokens.css. */
+export function buildGlobalsCss(config: ThemeConfig) {
+  return `@import "tailwindcss";
+@import "tw-animate-css";
+/* Design-system tokens built by Style Dictionary (npm run tokens:build). */
+@import "./tokens.css";
+/* Tailwind theme generated from the same tokens: Tailwind's default colors,
+   type, radius, shadow and breakpoint scales are reset and rebuilt from the
+   DS, so Tailwind only provides utility classes. */
+@import "./tailwind.theme.css";
+/* shadcn theme token mapping: each shadcn/ui variable aliases a DS token. */
+@import "./shadcn.theme.css";
+
+@custom-variant dark (&:is(.dark *));
+
+${THEME_INLINE}
+
+@layer base {
+  * {
+    @apply border-border outline-ring;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+${focusRingCss}`
+}
+
+/** Generated by scripts/build-tokens.mjs from the DS tokens. */
+export const TAILWIND_THEME_CSS = tailwindThemeCss
+
+export function isSameConfig(a: ThemeConfig, b: ThemeConfig) {
+  return JSON.stringify(a) === JSON.stringify(b)
+}

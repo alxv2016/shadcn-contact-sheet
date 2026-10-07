@@ -1,0 +1,155 @@
+{
+  "$description": "shadcn/ui theme variables (light / :root) as aliases of design-system tokens. Token Bridge adapter contract: each key becomes --<key>.",
+  "background": {
+    "$type": "color",
+    "$value": "{color.bg-default}"
+  },
+  "foreground": {
+    "$type": "color",
+    "$value": "{color.text-default}"
+  },
+  "card": {
+    "$type": "color",
+    "$value": "{color.surface-raised}"
+  },
+  "card-foreground": {
+    "$type": "color",
+    "$value": "{color.text-default}"
+  },
+  "popover": {
+    "$type": "color",
+    "$value": "{color.surface-raised}"
+  },
+  "popover-foreground": {
+    "$type": "color",
+    "$value": "{color.text-default}"
+  },
+  "primary": {
+    "$type": "color",
+    "$value": "{color.bg-action-primary}"
+  },
+  "primary-foreground": {
+    "$type": "color",
+    "$value": "{color.text-action-primary}"
+  },
+  "secondary": {
+    "$type": "color",
+    "$value": "{color.bg-muted}"
+  },
+  "secondary-foreground": {
+    "$type": "color",
+    "$value": "{color.text-action-secondary}"
+  },
+  "accent": {
+    "$type": "color",
+    "$value": "{color.bg-action-secondary-hover}"
+  },
+  "accent-foreground": {
+    "$type": "color",
+    "$value": "{color.text-default}"
+  },
+  "destructive": {
+    "$type": "color",
+    "$value": "{color.bg-action-danger}"
+  },
+  "destructive-foreground": {
+    "$type": "color",
+    "$value": "{color.text-action-danger}"
+  },
+  "warning": {
+    "$type": "color",
+    "$value": "{color.bg-status-warning-solid}"
+  },
+  "warning-foreground": {
+    "$type": "color",
+    "$value": "{color.text-status-warning-on-solid}"
+  },
+  "muted": {
+    "$type": "color",
+    "$value": "{color.bg-muted}"
+  },
+  "muted-foreground": {
+    "$type": "color",
+    "$value": "{color.text-muted}"
+  },
+  "border": {
+    "$type": "color",
+    "$value": "{color.border-default}"
+  },
+  "input": {
+    "$type": "color",
+    "$value": "{color.border-default}"
+  },
+  "ring": {
+    "$type": "color",
+    "$value": "{color.focus-ring}"
+  },
+  "ring-offset": {
+    "$type": "color",
+    "$value": "{color.focus-ring-offset}"
+  },
+  "chart-1": {
+    "$type": "color",
+    "$value": "{color.blue-300}"
+  },
+  "chart-2": {
+    "$type": "color",
+    "$value": "{color.blue-500}"
+  },
+  "chart-3": {
+    "$type": "color",
+    "$value": "{color.blue-600}"
+  },
+  "chart-4": {
+    "$type": "color",
+    "$value": "{color.blue-700}"
+  },
+  "chart-5": {
+    "$type": "color",
+    "$value": "{color.blue-800}"
+  },
+  "sidebar": {
+    "$type": "color",
+    "$value": "{color.bg-subtle}"
+  },
+  "sidebar-foreground": {
+    "$type": "color",
+    "$value": "{color.text-default}"
+  },
+  "sidebar-primary": {
+    "$type": "color",
+    "$value": "{color.bg-action-primary}"
+  },
+  "sidebar-primary-foreground": {
+    "$type": "color",
+    "$value": "{color.text-action-primary}"
+  },
+  "sidebar-accent": {
+    "$type": "color",
+    "$value": "{color.surface-muted}"
+  },
+  "sidebar-accent-foreground": {
+    "$type": "color",
+    "$value": "{color.text-default}"
+  },
+  "sidebar-border": {
+    "$type": "color",
+    "$value": "{color.border-default}"
+  },
+  "sidebar-ring": {
+    "$type": "color",
+    "$value": "{color.focus-ring}"
+  },
+  "selection": {
+    "$type": "color",
+    "$value": "{color.bg-selection}"
+  },
+  "selection-foreground": {
+    "$type": "color",
+    "$value": "{color.text-selection}"
+  },
+  "radius": {
+    "$type": "dimension",
+    "$value": "{radius.control}"
+  }
+}

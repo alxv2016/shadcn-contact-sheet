@@ -1,0 +1,47 @@
+{
+  "$description": "Mode-independent shadcn/Tailwind theme variables (fonts, spacing unit, shadows) aliased to design-system tokens. Used by this app; not part of the Token Bridge adapter contract.",
+  "font-sans": {
+    "$type": "string",
+    "$value": "{font-stack.sans}"
+  },
+  "font-heading": {
+    "$type": "string",
+    "$value": "{font-stack.sans}"
+  },
+  "spacing": {
+    "$type": "dimension",
+    "$value": "{spacing.2xs}"
+  },
+  "shadow-xs": {
+    "$type": "string",
+    "$value": "{elevation.low}"
+  },
+  "shadow-sm": {
+    "$type": "string",
+    "$value": "{elevation.raised}"
+  },
+  "shadow-md": {
+    "$type": "string",
+    "$value": "{elevation.overlay}"
+  },
+  "shadow-lg": {
+    "$type": "string",
+    "$value": "{elevation.floating}"
+  },
+  "shadow-xl": {
+    "$type": "string",
+    "$value": "{elevation.modal}"
+  },
+  "shadow-2xl": {
+    "$type": "string",
+    "$value": "{elevation.modal}"
+  },
+  "focus-ring-width": {
+    "$type": "dimension",
+    "$value": "{border.width-focus}"
+  },
+  "focus-ring-offset": {
+    "$type": "dimension",
+    "$value": "{border.02}"
+  }
+}

@@ -1,0 +1,1316 @@
+{
+  "color": {
+    "bg-action-danger": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:611",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-action-danger"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.red-600}"
+    },
+    "bg-action-danger-active": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:612",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-action-danger-active"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.red-800}"
+    },
+    "bg-action-danger-hover": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:613",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-action-danger-hover"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.red-700}"
+    },
+    "bg-action-primary": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:614",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-action-primary"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-600}"
+    },
+    "bg-action-primary-active": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:615",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-action-primary-active"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-800}"
+    },
+    "bg-action-primary-disabled": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:616",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-action-primary-disabled"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-100}"
+    },
+    "bg-action-primary-hover": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:617",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-action-primary-hover"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-700}"
+    },
+    "bg-action-secondary": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:618",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-action-secondary"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "bg-action-secondary-active": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:619",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-action-secondary-active"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-100}"
+    },
+    "bg-action-secondary-hover": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:620",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-action-secondary-hover"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-50}"
+    },
+    "bg-default": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:621",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-default"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "bg-inverse": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:622",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-inverse"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-900}"
+    },
+    "bg-muted": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:623",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-muted"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-100}"
+    },
+    "bg-selection": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:624",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-selection"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-100}"
+    },
+    "bg-skeleton": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:625",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-skeleton"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-100}"
+    },
+    "bg-status-critical": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:626",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-status-critical"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.red-50}"
+    },
+    "bg-status-critical-solid": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:627",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-status-critical-solid"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.red-600}"
+    },
+    "bg-status-info": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:628",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-status-info"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-50}"
+    },
+    "bg-status-info-solid": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:629",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-status-info-solid"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-600}"
+    },
+    "bg-status-success": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:630",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-status-success"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.green-50}"
+    },
+    "bg-status-success-solid": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:631",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-status-success-solid"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.green-600}"
+    },
+    "bg-status-warning": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:632",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-status-warning"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.yellow-50}"
+    },
+    "bg-status-warning-solid": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:633",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-status-warning-solid"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.yellow-300}"
+    },
+    "bg-subtle": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:634",
+        "com.figma.codeSyntax": {
+          "WEB": "color-bg-subtle"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-50}"
+    },
+    "border-action-danger": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:635",
+        "com.figma.codeSyntax": {
+          "WEB": "color-border-action-danger"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.red-600}"
+    },
+    "border-action-primary": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:636",
+        "com.figma.codeSyntax": {
+          "WEB": "color-border-action-primary"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-600}"
+    },
+    "border-action-secondary": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:637",
+        "com.figma.codeSyntax": {
+          "WEB": "color-border-action-secondary"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-300}"
+    },
+    "border-default": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:638",
+        "com.figma.codeSyntax": {
+          "WEB": "color-border-default"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-200}"
+    },
+    "border-disabled": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:639",
+        "com.figma.codeSyntax": {
+          "WEB": "color-border-disabled"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-100}"
+    },
+    "border-focus": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:640",
+        "com.figma.codeSyntax": {
+          "WEB": "color-border-focus"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-500}"
+    },
+    "border-inverse": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:641",
+        "com.figma.codeSyntax": {
+          "WEB": "color-border-inverse"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-700}"
+    },
+    "border-selected": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:642",
+        "com.figma.codeSyntax": {
+          "WEB": "color-border-selected"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-600}"
+    },
+    "border-status-critical": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:643",
+        "com.figma.codeSyntax": {
+          "WEB": "color-border-status-critical"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.red-200}"
+    },
+    "border-status-info": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:644",
+        "com.figma.codeSyntax": {
+          "WEB": "color-border-status-info"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-200}"
+    },
+    "border-status-success": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:645",
+        "com.figma.codeSyntax": {
+          "WEB": "color-border-status-success"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.green-200}"
+    },
+    "border-status-warning": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:646",
+        "com.figma.codeSyntax": {
+          "WEB": "color-border-status-warning"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.yellow-200}"
+    },
+    "border-strong": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:647",
+        "com.figma.codeSyntax": {
+          "WEB": "color-border-strong"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-400}"
+    },
+    "border-subtle": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:648",
+        "com.figma.codeSyntax": {
+          "WEB": "color-border-subtle"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-100}"
+    },
+    "focus-ring": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:649",
+        "com.figma.codeSyntax": {
+          "WEB": "color-focus-ring"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-500}"
+    },
+    "focus-ring-offset": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:650",
+        "com.figma.codeSyntax": {
+          "WEB": "color-focus-ring-offset"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "focus-ring-subtle": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:651",
+        "com.figma.codeSyntax": {
+          "WEB": "color-focus-ring-subtle"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-200}"
+    },
+    "highlight-skeleton": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:652",
+        "com.figma.codeSyntax": {
+          "WEB": "color-highlight-skeleton"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-50}"
+    },
+    "icon-brand": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:653",
+        "com.figma.codeSyntax": {
+          "WEB": "color-icon-brand"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-600}"
+    },
+    "icon-default": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:654",
+        "com.figma.codeSyntax": {
+          "WEB": "color-icon-default"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-800}"
+    },
+    "icon-disabled": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:655",
+        "com.figma.codeSyntax": {
+          "WEB": "color-icon-disabled"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-400}"
+    },
+    "icon-inverse": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:656",
+        "com.figma.codeSyntax": {
+          "WEB": "color-icon-inverse"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "icon-muted": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:657",
+        "com.figma.codeSyntax": {
+          "WEB": "color-icon-muted"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-500}"
+    },
+    "icon-secondary": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:658",
+        "com.figma.codeSyntax": {
+          "WEB": "color-icon-secondary"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-600}"
+    },
+    "icon-status-critical": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:659",
+        "com.figma.codeSyntax": {
+          "WEB": "color-icon-status-critical"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.red-600}"
+    },
+    "icon-status-info": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:660",
+        "com.figma.codeSyntax": {
+          "WEB": "color-icon-status-info"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-600}"
+    },
+    "icon-status-success": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:661",
+        "com.figma.codeSyntax": {
+          "WEB": "color-icon-status-success"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.green-600}"
+    },
+    "icon-status-warning": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:662",
+        "com.figma.codeSyntax": {
+          "WEB": "color-icon-status-warning"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.yellow-600}"
+    },
+    "surface-default": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:663",
+        "com.figma.codeSyntax": {
+          "WEB": "color-surface-default"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "surface-disabled": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:664",
+        "com.figma.codeSyntax": {
+          "WEB": "color-surface-disabled"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-100}"
+    },
+    "surface-inverse": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:665",
+        "com.figma.codeSyntax": {
+          "WEB": "color-surface-inverse"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-900}"
+    },
+    "surface-muted": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:666",
+        "com.figma.codeSyntax": {
+          "WEB": "color-surface-muted"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-100}"
+    },
+    "surface-raised": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:667",
+        "com.figma.codeSyntax": {
+          "WEB": "color-surface-raised"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "surface-selected": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:668",
+        "com.figma.codeSyntax": {
+          "WEB": "color-surface-selected"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-50}"
+    },
+    "surface-subtle": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:669",
+        "com.figma.codeSyntax": {
+          "WEB": "color-surface-subtle"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-50}"
+    },
+    "text-action-danger": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:670",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-action-danger"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "text-action-primary": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:671",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-action-primary"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "text-action-primary-disabled": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:672",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-action-primary-disabled"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-400}"
+    },
+    "text-action-secondary": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:673",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-action-secondary"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-900}"
+    },
+    "text-default": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:674",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-default"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-900}"
+    },
+    "text-disabled": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:675",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-disabled"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-400}"
+    },
+    "text-inverse": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:676",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-inverse"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "text-link": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:677",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-link"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-600}"
+    },
+    "text-link-active": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:678",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-link-active"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-800}"
+    },
+    "text-link-hover": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:679",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-link-hover"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-700}"
+    },
+    "text-muted": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:680",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-muted"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-600}"
+    },
+    "text-secondary": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:681",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-secondary"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-700}"
+    },
+    "text-selection": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:682",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-selection"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-900}"
+    },
+    "text-status-critical": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:683",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-status-critical"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.red-800}"
+    },
+    "text-status-critical-on-solid": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:684",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-status-critical-on-solid"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "text-status-info": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:685",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-status-info"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.blue-800}"
+    },
+    "text-status-info-on-solid": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:686",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-status-info-on-solid"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "text-status-success": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:687",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-status-success"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.green-800}"
+    },
+    "text-status-success-on-solid": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:688",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-status-success-on-solid"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "text-status-warning": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:689",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-status-warning"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.yellow-800}"
+    },
+    "text-status-warning-on-solid": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:690",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-status-warning-on-solid"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-900}"
+    },
+    "text-strong": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:691",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-strong"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.black}"
+    },
+    "text-subtle": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "ALL_FILLS",
+          "EFFECT_COLOR",
+          "STROKE_COLOR"
+        ],
+        "com.figma.variableId": "VariableID:218:692",
+        "com.figma.codeSyntax": {
+          "WEB": "color-text-subtle"
+        }
+      },
+      "$type": "color",
+      "$value": "{color.grey-500}"
+    }
+  }
+}

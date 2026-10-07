@@ -1,0 +1,106 @@
+/* Maia and Luma ship pill-shaped controls (rounded-3xl / 4xl / full), which
+   ignore the design-system radius. Here their interactive controls use
+   Nova's radius scale instead, so they follow --radius (radius.control by
+   default): rounded-lg = --radius, rounded-md = 0.8x, rounded-sm = 0.6x.
+   Surfaces (cards, dialogs, popovers, menus) keep each style's softer
+   multiples, and avatars, switches, radios, sliders and progress bars stay
+   round as in every style.
+
+   Selectors and variants mirror the upstream rules so specificity matches;
+   this file is imported after the style sheets, so it wins. */
+
+.style-maia,
+.style-luma {
+  /* MARK: Controls */
+  .cn-button,
+  .cn-button-group-text,
+  .cn-input,
+  .cn-native-select,
+  .cn-select-trigger,
+  .cn-toggle,
+  .cn-menubar,
+  .cn-combobox-chips,
+  .cn-input-otp-group,
+  .cn-questionnaire-choice,
+  .cn-questionnaire-input {
+    @apply rounded-lg;
+  }
+
+  .cn-badge {
+    @apply rounded-md;
+  }
+
+  .cn-toggle-group {
+    @apply rounded-lg data-[spacing=0]:data-[variant=outline]:rounded-lg;
+  }
+
+  .cn-toggle-group-item {
+    @apply group-data-horizontal/toggle-group:data-[spacing=0]:first:rounded-l-lg group-data-vertical/toggle-group:data-[spacing=0]:first:rounded-t-lg group-data-horizontal/toggle-group:data-[spacing=0]:last:rounded-r-lg group-data-vertical/toggle-group:data-[spacing=0]:last:rounded-b-lg;
+  }
+
+  .cn-input-otp-slot {
+    @apply first:rounded-l-lg last:rounded-r-lg;
+  }
+
+  /* MARK: Button group */
+  .cn-button-group {
+    @apply has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-lg;
+  }
+
+  .cn-button-group-orientation-horizontal {
+    @apply [&>[data-slot]:not(:has(~[data-slot]))]:rounded-r-lg!;
+  }
+
+  .cn-button-group-orientation-vertical {
+    @apply [&>[data-slot]:not(:has(~[data-slot]))]:rounded-b-lg!;
+  }
+
+  /* MARK: Input group */
+  .cn-input-group {
+    @apply rounded-lg has-data-[align=block-end]:rounded-lg has-data-[align=block-start]:rounded-lg has-[textarea]:rounded-lg;
+  }
+
+  .cn-input-group-addon {
+    @apply **:data-[slot=kbd]:rounded-sm;
+  }
+
+  .cn-input-group-button,
+  .cn-input-group-button-size-xs,
+  .cn-input-group-button-size-icon-xs {
+    @apply rounded-[calc(var(--radius)-3px)];
+  }
+
+  .cn-combobox-chip {
+    @apply rounded-sm;
+  }
+
+  /* MARK: Tabs */
+  .cn-tabs-list {
+    @apply rounded-lg group-data-vertical/tabs:rounded-lg data-[variant=line]:rounded-none;
+  }
+
+  .cn-tabs-trigger {
+    @apply rounded-md group-data-vertical/tabs:rounded-md;
+  }
+
+  /* MARK: Menu and navigation items */
+  .cn-command-item {
+    @apply rounded-md in-data-[slot=dialog-content]:rounded-md!;
+  }
+
+  .cn-dropdown-menu-item,
+  .cn-context-menu-item,
+  .cn-menubar-item,
+  .cn-menubar-checkbox-item,
+  .cn-menubar-radio-item,
+  .cn-menubar-sub-trigger,
+  .cn-select-item,
+  .cn-navigation-menu-trigger,
+  .cn-navigation-menu-link {
+    @apply rounded-md;
+  }
+
+  .cn-menubar-trigger {
+    @apply rounded-sm;
+  }
+}

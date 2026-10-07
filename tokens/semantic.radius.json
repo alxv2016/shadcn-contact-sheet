@@ -1,0 +1,132 @@
+{
+  "radius": {
+    "card": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "CORNER_RADIUS"
+        ],
+        "com.figma.variableId": "VariableID:218:698",
+        "com.figma.codeSyntax": {
+          "WEB": "radius-card"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{radius.xl}"
+    },
+    "control": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "CORNER_RADIUS"
+        ],
+        "com.figma.variableId": "VariableID:218:699",
+        "com.figma.codeSyntax": {
+          "WEB": "radius-control"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{radius.lg}"
+    },
+    "control-sm": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "CORNER_RADIUS"
+        ],
+        "com.figma.variableId": "VariableID:218:700",
+        "com.figma.codeSyntax": {
+          "WEB": "radius-control-sm"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{radius.sm}"
+    },
+    "large": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "CORNER_RADIUS"
+        ],
+        "com.figma.variableId": "VariableID:218:701",
+        "com.figma.codeSyntax": {
+          "WEB": "radius-large"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{radius.4xl}"
+    },
+    "modal": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "CORNER_RADIUS"
+        ],
+        "com.figma.variableId": "VariableID:218:702",
+        "com.figma.codeSyntax": {
+          "WEB": "radius-modal"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{radius.3xl}"
+    },
+    "panel": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "CORNER_RADIUS"
+        ],
+        "com.figma.variableId": "VariableID:218:703",
+        "com.figma.codeSyntax": {
+          "WEB": "radius-panel"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{radius.2xl}"
+    },
+    "rounded": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "CORNER_RADIUS"
+        ],
+        "com.figma.variableId": "VariableID:218:704",
+        "com.figma.codeSyntax": {
+          "WEB": "radius-rounded"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{radius.full}"
+    },
+    "subtle": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "CORNER_RADIUS"
+        ],
+        "com.figma.variableId": "VariableID:218:705",
+        "com.figma.codeSyntax": {
+          "WEB": "radius-subtle"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "rem"
+      },
+      "$type": "dimension",
+      "$value": "{radius.xs}"
+    }
+  }
+}

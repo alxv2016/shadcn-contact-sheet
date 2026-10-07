@@ -1,0 +1,151 @@
+{
+  "$description": "shadcn/ui theme variables for .dark as aliases of design-system tokens.",
+  "background": {
+    "$type": "color",
+    "$value": "{color.surface-inverse}"
+  },
+  "foreground": {
+    "$type": "color",
+    "$value": "{color.text-inverse}"
+  },
+  "card": {
+    "$type": "color",
+    "$value": "{color.grey-800}"
+  },
+  "card-foreground": {
+    "$type": "color",
+    "$value": "{color.grey-50}"
+  },
+  "popover": {
+    "$type": "color",
+    "$value": "{color.grey-800}"
+  },
+  "popover-foreground": {
+    "$type": "color",
+    "$value": "{color.grey-50}"
+  },
+  "primary": {
+    "$type": "color",
+    "$value": "{color.blue-500}"
+  },
+  "primary-foreground": {
+    "$type": "color",
+    "$value": "{color.white}"
+  },
+  "secondary": {
+    "$type": "color",
+    "$value": "{color.grey-700}"
+  },
+  "secondary-foreground": {
+    "$type": "color",
+    "$value": "{color.grey-50}"
+  },
+  "accent": {
+    "$type": "color",
+    "$value": "{color.grey-700}"
+  },
+  "accent-foreground": {
+    "$type": "color",
+    "$value": "{color.grey-50}"
+  },
+  "destructive": {
+    "$type": "color",
+    "$value": "{color.red-500}"
+  },
+  "destructive-foreground": {
+    "$type": "color",
+    "$value": "{color.white}"
+  },
+  "warning": {
+    "$type": "color",
+    "$value": "{color.yellow-600}"
+  },
+  "warning-foreground": {
+    "$type": "color",
+    "$value": "{color.yellow-50}"
+  },
+  "muted": {
+    "$type": "color",
+    "$value": "{color.grey-700}"
+  },
+  "muted-foreground": {
+    "$type": "color",
+    "$value": "{color.grey-400}"
+  },
+  "border": {
+    "$type": "color",
+    "$value": "{color.border-inverse}"
+  },
+  "input": {
+    "$type": "color",
+    "$value": "{color.border-inverse}"
+  },
+  "ring": {
+    "$type": "color",
+    "$value": "{color.blue-400}"
+  },
+  "ring-offset": {
+    "$type": "color",
+    "$value": "{color.surface-inverse}"
+  },
+  "chart-1": {
+    "$type": "color",
+    "$value": "{color.blue-200}"
+  },
+  "chart-2": {
+    "$type": "color",
+    "$value": "{color.blue-400}"
+  },
+  "chart-3": {
+    "$type": "color",
+    "$value": "{color.blue-500}"
+  },
+  "chart-4": {
+    "$type": "color",
+    "$value": "{color.blue-600}"
+  },
+  "chart-5": {
+    "$type": "color",
+    "$value": "{color.blue-700}"
+  },
+  "sidebar": {
+    "$type": "color",
+    "$value": "{color.grey-800}"
+  },
+  "sidebar-foreground": {
+    "$type": "color",
+    "$value": "{color.grey-50}"
+  },
+  "sidebar-primary": {
+    "$type": "color",
+    "$value": "{color.blue-500}"
+  },
+  "sidebar-primary-foreground": {
+    "$type": "color",
+    "$value": "{color.white}"
+  },
+  "sidebar-accent": {
+    "$type": "color",
+    "$value": "{color.grey-700}"
+  },
+  "sidebar-accent-foreground": {
+    "$type": "color",
+    "$value": "{color.grey-50}"
+  },
+  "sidebar-border": {
+    "$type": "color",
+    "$value": "{color.border-inverse}"
+  },
+  "sidebar-ring": {
+    "$type": "color",
+    "$value": "{color.blue-400}"
+  },
+  "selection": {
+    "$type": "color",
+    "$value": "{color.blue-800}"
+  },
+  "selection-foreground": {
+    "$type": "color",
+    "$value": "{color.white}"
+  }
+}

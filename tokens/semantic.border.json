@@ -1,0 +1,68 @@
+{
+  "border": {
+    "width-default": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "STROKE_FLOAT"
+        ],
+        "com.figma.variableId": "VariableID:218:602",
+        "com.figma.codeSyntax": {
+          "WEB": "border-width-default"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "px"
+      },
+      "$type": "dimension",
+      "$value": "{border.01}"
+    },
+    "width-focus": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "STROKE_FLOAT"
+        ],
+        "com.figma.variableId": "VariableID:218:603",
+        "com.figma.codeSyntax": {
+          "WEB": "border-width-focus"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "px"
+      },
+      "$type": "dimension",
+      "$value": "{border.02}"
+    },
+    "width-heavy": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "STROKE_FLOAT"
+        ],
+        "com.figma.variableId": "VariableID:218:604",
+        "com.figma.codeSyntax": {
+          "WEB": "border-width-heavy"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "px"
+      },
+      "$type": "dimension",
+      "$value": "{border.03}"
+    },
+    "width-strong": {
+      "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "$extensions": {
+        "com.figma.scopes": [
+          "STROKE_FLOAT"
+        ],
+        "com.figma.variableId": "VariableID:218:605",
+        "com.figma.codeSyntax": {
+          "WEB": "border-width-strong"
+        },
+        "com.tokenbridge.sourceUnit": "px",
+        "com.tokenbridge.unit": "px"
+      },
+      "$type": "dimension",
+      "$value": "{border.02}"
+    }
+  }
+}

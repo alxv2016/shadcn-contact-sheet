@@ -1,0 +1,49 @@
+/* Global focus indicator for every interactive element.
+
+   A solid outline in --ring, offset from the element by --focus-ring-offset,
+   with the gap filled by --ring-offset. The two-tone treatment keeps the ring
+   at full contrast on any surface (WCAG 2.2 SC 2.4.7 Focus Visible, 2.4.11
+   Focus Not Obscured, 2.4.13 Focus Appearance: >= 2px, >= 3:1 contrast).
+
+   Deliberately unlayered: unlayered rules beat Tailwind's layered utilities,
+   so this replaces the components' own focus treatments (ring-3 ring-ring/50,
+   outline-hidden, …) without editing them. All values are token aliases set
+   by the theme (focus-ring-width -> border.width-focus, etc.). */
+
+:focus-visible {
+  outline: var(--focus-ring-width, 2px) solid var(--ring);
+  outline-offset: var(--focus-ring-offset, 2px);
+  /* Fill the offset gap; keep the element's own elevation shadow. */
+  box-shadow:
+    0 0 0 var(--focus-ring-offset, 2px) var(--ring-offset, transparent),
+    var(--tw-shadow, 0 0 #0000);
+}
+
+/* Controls inside an input group: ring the whole group, not the bare input. */
+:is([data-slot="input-group-control"], [data-slot="command-input"]):focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+[data-slot="input-group"]:has(
+    :is([data-slot="input-group-control"], [data-slot="command-input"]):focus-visible
+  ) {
+  outline: var(--focus-ring-width, 2px) solid var(--ring);
+  outline-offset: var(--focus-ring-offset, 2px);
+  box-shadow:
+    0 0 0 var(--focus-ring-offset, 2px) var(--ring-offset, transparent),
+    var(--tw-shadow, 0 0 #0000);
+}
+
+/* Items inside scrolling menus and listboxes would have an outset ring
+   clipped by the menu's overflow, so their ring sits just inside the item. */
+:is(
+    [role="menuitem"],
+    [role="menuitemcheckbox"],
+    [role="menuitemradio"],
+    [role="option"],
+    [cmdk-item]
+  ):focus-visible {
+  outline-offset: calc(var(--focus-ring-width, 2px) * -1);
+  box-shadow: none;
+}
