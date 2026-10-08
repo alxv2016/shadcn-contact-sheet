@@ -108,7 +108,7 @@ TOKENS_SOURCE_REM_BASE=16 TOKENS_TARGET_REM_BASE=16 npm run tokens:build
 
 - **Light / Dark** switches which mode's colors you are editing and the preview's mode (shortcut: `d`).
 - **Style, Theme, Chart Color, Radius Multiplier, Font, Heading, Spacing Multiplier** are quick pickers; the **Colors** sections let you map every variable individually.
-- **Theme overrides** set radius, spacing, control height, icon size, text size and font weight on individual components (Button, Input & select, Badge, Card, Dialog, Popover), replacing the values the Style gives them; each component lists the ones that apply (Card, Dialog and Popover set their title's size and weight). Each override picks a token; the × button returns it to the style default. They are exported as `shadcn.overrides.css`, which targets shadcn's `data-slot` attributes so it works with any style.
+- **Theme overrides** set radius, spacing, control height, icon size, text size and font weight on individual components (Button, Input & select, Badge, Card, Dialog, Popover, Chat bubble), replacing the values the Style gives them; each component lists the ones that apply (Card, Dialog and Popover set their title's size and weight). Each override picks a token; the × button returns it to the style default. They are exported as `shadcn.overrides.css`, which targets shadcn's `data-slot` attributes so it works with any style.
 - **Shuffle** picks a random style, color family (for both Theme and Chart Color) and radius. **Reset** returns to the mapping in `tokens/`.
 - The switcher at the bottom right changes the preview: **01**, **02**, **Components**, **Charts** (with a chart-type switcher at the bottom left) and **Tokens**.
 - Your current theme is kept in the browser between visits.

@@ -193,6 +193,21 @@ export const OVERRIDE_COMPONENTS: OverrideComponent[] = [
       weight: titleWeight(slots("popover-title")),
     },
   },
+  {
+    id: "bubble",
+    title: "Chat bubble",
+    properties: {
+      radius: radius(slots("bubble-content")),
+      spacing: {
+        hint: "Horizontal padding (vertical keeps the style's)",
+        targets: [{ selector: slots("bubble-content"), declarations: ["padding-inline"] }],
+      },
+      text: {
+        hint: "Message text size",
+        targets: [{ selector: slots("bubble-content"), declarations: ["font-size"] }],
+      },
+    },
+  },
 ]
 
 /** Key in ThemeConfig.overrides, e.g. "button.radius". */
