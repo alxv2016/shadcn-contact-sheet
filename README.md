@@ -11,7 +11,7 @@ It mirrors shadcn's [Create](https://ui.shadcn.com/create) page — pick a style
 ## Features
 
 - **Token-driven theme editor.** Map each shadcn variable (`background`, `primary`, `ring`, `chart-1`, `radius`, …) to a semantic or primitive token, separately for light and dark mode. Hovering a token previews it live.
-- **Accent families, radius, fonts, spacing, shadows and focus ring**, all chosen from your tokens.
+- **Theme and chart color families, radius, fonts, spacing, shadows and focus ring**, all chosen from your tokens.
 - **All eight shadcn styles** (Vega, Nova, Maia, Lyra, Mira, Luma, Sera, Rhea).
 - **Preview views:** shadcn's two showcase layouts, every component example, 70 charts, and a **Tokens** view that lists each shadcn theme token, what it controls and the design token it maps to.
 - **Tailwind with tokens as the single source of truth.** Tailwind's default colors, type, radius, shadow and breakpoint scales are reset and rebuilt from your tokens; Tailwind only provides the utility classes.
@@ -107,8 +107,9 @@ TOKENS_SOURCE_REM_BASE=16 TOKENS_TARGET_REM_BASE=16 npm run tokens:build
 ## Using the editor
 
 - **Light / Dark** switches which mode's colors you are editing and the preview's mode (shortcut: `d`).
-- **Style, Accent, Radius, Font, Heading, Spacing unit** are quick pickers; the **Colors** sections let you map every variable individually.
-- **Shuffle** picks a random style, accent family and radius. **Reset** returns to the mapping in `tokens/`.
+- **Style, Theme, Chart Color, Radius Multiplier, Font, Heading, Spacing Multiplier** are quick pickers; the **Colors** sections let you map every variable individually.
+- **Theme overrides** set radius, spacing, control height, icon size, text size and font weight on individual components (Button, Input & select, Badge, Card, Dialog, Popover), replacing the values the Style gives them; each component lists the ones that apply (Card, Dialog and Popover set their title's size and weight). Each override picks a token; the × button returns it to the style default. They are exported as `shadcn.overrides.css`, which targets shadcn's `data-slot` attributes so it works with any style.
+- **Shuffle** picks a random style, color family (for both Theme and Chart Color) and radius. **Reset** returns to the mapping in `tokens/`.
 - The switcher at the bottom right changes the preview: **01**, **02**, **Components**, **Charts** (with a chart-type switcher at the bottom left) and **Tokens**.
 - Your current theme is kept in the browser between visits.
 
@@ -117,6 +118,7 @@ TOKENS_SOURCE_REM_BASE=16 TOKENS_TARGET_REM_BASE=16 npm run tokens:build
 **Get Code** shows each file of the current theme, with copy and download buttons:
 
 - `shadcn.theme.css`, `shadcn.semantic.json`, `dark.shadcn.semantic.json`, `shadcn.extensions.json`
+- `shadcn.overrides.css` — component overrides from Theme overrides
 - `tailwind.theme.css`
 - `globals.css` — a ready-to-paste stylesheet for a shadcn project
 
@@ -125,14 +127,16 @@ TOKENS_SOURCE_REM_BASE=16 TOKENS_TARGET_REM_BASE=16 npm run tokens:build
 ```
 shadcn-theme-tokens/
   tokens/   Style Dictionary sources + the shadcn mapping (current editor state)
-  css/      tokens.css, tailwind.theme.css, shadcn.theme.css, globals.css
+  css/      tokens.css, tailwind.theme.css, shadcn.theme.css, shadcn.overrides.css, globals.css
 ```
 
 To make a saved theme this repo's new default, copy the three mapping files from the zip's `tokens/` folder into `tokens/` and run `npm run tokens:build`.
 
 ### Using the CSS in a shadcn project
 
-Copy the four files from the zip's `css/` folder next to each other and use `globals.css` as your project's global stylesheet. It imports `tokens.css`, `tailwind.theme.css` and `shadcn.theme.css`, exposes the shadcn variables to Tailwind, and includes the focus ring.
+Copy the files from the zip's `css/` folder next to each other and use `globals.css` as your project's global stylesheet. It imports `tokens.css`, `tailwind.theme.css` and `shadcn.theme.css` (plus `shadcn.overrides.css` when you set Theme overrides), exposes the shadcn variables to Tailwind, and includes the focus ring.
+
+`shadcn.overrides.css` is unlayered, so it wins over Tailwind utilities, including a `className` passed to a single component. Use an important utility (for example `rounded-none!`) for one-off exceptions.
 
 ## Project structure
 

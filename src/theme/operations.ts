@@ -17,7 +17,7 @@ export function familyOf(path: string | undefined) {
   return primitiveOf(path)?.match(/^color\.([a-z]+)-\d+$/)?.[1]
 }
 
-export const ACCENT_FAMILIES = Object.keys(COLOR_FAMILIES)
+export const FAMILY_NAMES = Object.keys(COLOR_FAMILIES)
 
 function relativeLuminance(path: string) {
   const match = String(getToken(path)?.value).match(
@@ -59,12 +59,11 @@ function preferDefault(defaults: Aliases, name: string, path: string | undefined
   return primitiveOf(defaults[name]) === primitiveOf(path) ? defaults[name] : path
 }
 
-function withFamily(
+function withSteps(
   aliases: Aliases,
   defaults: Aliases,
   family: string,
-  steps: Record<string, number>,
-  foregrounds: string[]
+  steps: Record<string, number>
 ) {
   const next = { ...aliases }
 
@@ -72,6 +71,18 @@ function withFamily(
     const path = preferDefault(defaults, name, familyStep(family, step))
     if (path) next[name] = path
   }
+
+  return next
+}
+
+function withFamily(
+  aliases: Aliases,
+  defaults: Aliases,
+  family: string,
+  steps: Record<string, number>,
+  foregrounds: string[]
+) {
+  const next = withSteps(aliases, defaults, family, steps)
 
   for (const [surface, fg] of [
     ["primary", "primary-foreground"],
@@ -84,8 +95,8 @@ function withFamily(
   return next
 }
 
-/** shadcn's "Theme" + "Chart color" pickers, driven by a DS color family. */
-export function applyAccentFamily(config: ThemeConfig, family: string): ThemeConfig {
+/** shadcn's "Theme" picker, driven by a DS color family. */
+export function applyThemeFamily(config: ThemeConfig, family: string): ThemeConfig {
   return {
     ...config,
     light: withFamily(
@@ -97,11 +108,6 @@ export function applyAccentFamily(config: ThemeConfig, family: string): ThemeCon
         ring: 500,
         "sidebar-primary": 600,
         "sidebar-ring": 500,
-        "chart-1": 300,
-        "chart-2": 500,
-        "chart-3": 600,
-        "chart-4": 700,
-        "chart-5": 800,
         selection: 100,
         "selection-foreground": 900,
       },
@@ -116,15 +122,31 @@ export function applyAccentFamily(config: ThemeConfig, family: string): ThemeCon
         ring: 400,
         "sidebar-primary": 500,
         "sidebar-ring": 400,
-        "chart-1": 200,
-        "chart-2": 400,
-        "chart-3": 500,
-        "chart-4": 600,
-        "chart-5": 700,
         selection: 800,
       },
       ["color.white", "color.grey-900"]
     ),
+  }
+}
+
+/** shadcn's "Chart color" picker: chart-1…chart-5 as a light-to-dark ramp of one family. */
+export function applyChartFamily(config: ThemeConfig, family: string): ThemeConfig {
+  return {
+    ...config,
+    light: withSteps(config.light, DEFAULT_CONFIG.light, family, {
+      "chart-1": 300,
+      "chart-2": 500,
+      "chart-3": 600,
+      "chart-4": 700,
+      "chart-5": 800,
+    }),
+    dark: withSteps(config.dark, DEFAULT_CONFIG.dark, family, {
+      "chart-1": 200,
+      "chart-2": 400,
+      "chart-3": 500,
+      "chart-4": 600,
+      "chart-5": 700,
+    }),
   }
 }
 
@@ -134,11 +156,13 @@ function sample<T>(items: T[]) {
 
 export function randomize(config: ThemeConfig): ThemeConfig {
   const radii = TOKENS.filter(
-    (t) => t.group === "radius" && t.tier === "semantic" && (t.px ?? 0) <= 24
+    (t) => t.group === "radius" && t.tier === "primitive" && (t.px ?? 0) <= 24
   )
 
+  const family = sample(FAMILY_NAMES)
+
   return {
-    ...applyAccentFamily(config, sample(ACCENT_FAMILIES)),
+    ...applyChartFamily(applyThemeFamily(config, family), family),
     style: sample(STYLES.map((s) => s.name)),
     global: { ...config.global, radius: sample(radii).path },
   }

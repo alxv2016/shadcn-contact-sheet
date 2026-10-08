@@ -42,10 +42,19 @@ export const ADAPTER_GLOBAL_VARS = new Set(["radius"])
 
 export const TOKEN_FILTERS: Record<TokenKind, (token: DesignToken) => boolean> = {
   color: (token) => token.type === "color",
-  radius: (token) => token.group === "radius",
+  // Radius and spacing set a base unit that each style scales per component,
+  // so semantic names like radius.card would be misleading here.
+  radius: (token) => token.group === "radius" && token.tier === "primitive",
   font: (token) => token.group === "font-stack",
-  spacing: (token) => token.group === "spacing",
+  spacing: (token) => token.group === "spacing" && token.tier === "primitive",
   shadow: (token) => token.group === "elevation",
   border: (token) => token.group === "border",
+  // Theme overrides: semantic sizes only where their name fits the use.
+  "control-size": (token) =>
+    token.group === "size" && (token.tier === "primitive" || token.path.startsWith("size.control-")),
+  "icon-size": (token) =>
+    token.group === "size" && (token.tier === "primitive" || token.path.startsWith("size.icon-")),
+  "font-size": (token) => token.group === "font-size",
+  "font-weight": (token) => token.group === "font-weight",
 }
 

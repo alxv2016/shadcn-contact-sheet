@@ -1,4 +1,14 @@
-export type TokenKind = "color" | "radius" | "font" | "spacing" | "shadow" | "border"
+export type TokenKind =
+  | "color"
+  | "radius"
+  | "font"
+  | "spacing"
+  | "shadow"
+  | "border"
+  | "control-size"
+  | "icon-size"
+  | "font-size"
+  | "font-weight"
 
 export type ThemeVar = {
   /** shadcn CSS variable name without the leading "--". */

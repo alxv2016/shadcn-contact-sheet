@@ -6,6 +6,7 @@ import {
   SaveIcon,
   ShuffleIcon,
   SunIcon,
+  XIcon,
 } from "lucide-react"
 import { toast } from "sonner"
 
@@ -23,10 +24,17 @@ import { GetCodeDialog } from "@/editor/get-code-dialog"
 import { OptionPicker, TokenPicker, TokenSwatch } from "@/editor/pickers"
 import { type ThemeEditor } from "@/editor/use-theme-editor"
 import { COLOR_FAMILIES } from "@/theme/catalog"
-import { getAlias, setAlias, type StyleName } from "@/theme/config"
+import { getAlias, setAlias, type StyleName, type ThemeConfig } from "@/theme/config"
 import {
-  ACCENT_FAMILIES,
-  applyAccentFamily,
+  OVERRIDE_COMPONENTS,
+  OVERRIDE_PROPERTIES,
+  overrideKey,
+  type OverrideComponent,
+} from "@/theme/overrides"
+import {
+  FAMILY_NAMES,
+  applyChartFamily,
+  applyThemeFamily,
   familyOf,
   randomize,
 } from "@/theme/operations"
@@ -61,12 +69,37 @@ function FamilyRamp({ family, className }: { family: string; className?: string 
   )
 }
 
-const ACCENT_OPTIONS = ACCENT_FAMILIES.map((family) => ({
+const CHART_VARS = ["chart-1", "chart-2", "chart-3", "chart-4", "chart-5"]
+
+const FAMILY_OPTIONS = FAMILY_NAMES.map((family) => ({
   value: family,
   title: family[0].toUpperCase() + family.slice(1),
   description: `color.${family}-* primitives`,
   icon: <FamilyRamp family={family} />,
 }))
+
+function Section({
+  title,
+  count,
+  defaultOpen,
+  children,
+}: {
+  title: string
+  count?: number
+  defaultOpen?: boolean
+  children: React.ReactNode
+}) {
+  return (
+    <Collapsible defaultOpen={defaultOpen} className="group/section">
+      <CollapsibleTrigger className="flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-xs font-medium text-muted-foreground outline-none hover:text-foreground focus-visible:ring-1 focus-visible:ring-foreground/50">
+        {title}
+        {count !== undefined && <span className="opacity-60">{count}</span>}
+        <ChevronDownIcon className="ml-auto size-3.5 transition-transform group-data-[state=closed]/section:-rotate-90" />
+      </CollapsibleTrigger>
+      <CollapsibleContent className="flex flex-col">{children}</CollapsibleContent>
+    </Collapsible>
+  )
+}
 
 function VarGroup({
   group,
@@ -78,19 +111,17 @@ function VarGroup({
   renderVar: (v: ThemeVar) => React.ReactNode
 }) {
   return (
-    <Collapsible defaultOpen={defaultOpen} className="group/section">
-      <CollapsibleTrigger className="flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-xs font-medium text-muted-foreground outline-none hover:text-foreground focus-visible:ring-1 focus-visible:ring-foreground/50">
-        {group.title}
-        <span className="opacity-60">{group.vars.length}</span>
-        <ChevronDownIcon className="ml-auto size-3.5 transition-transform group-data-[state=closed]/section:-rotate-90" />
-      </CollapsibleTrigger>
-      <CollapsibleContent className="flex flex-col">
-        {group.vars.map((v) => (
-          <React.Fragment key={v.name}>{renderVar(v)}</React.Fragment>
-        ))}
-      </CollapsibleContent>
-    </Collapsible>
+    <Section title={group.title} count={group.vars.length} defaultOpen={defaultOpen}>
+      {group.vars.map((v) => (
+        <React.Fragment key={v.name}>{renderVar(v)}</React.Fragment>
+      ))}
+    </Section>
   )
+}
+
+function withOverride(config: ThemeConfig, key: string, path: string | null): ThemeConfig {
+  const { [key]: _previous, ...rest } = config.overrides
+  return { ...config, overrides: path ? { ...rest, [key]: path } : rest }
 }
 
 export function Customizer({ editor }: { editor: ThemeEditor }) {
@@ -107,6 +138,46 @@ export function Customizer({ editor }: { editor: ThemeEditor }) {
       onPreview={(path) => preview(path ? setAlias(config, v, mode, path) : null)}
     />
   )
+
+  const overridePicker = (
+    component: OverrideComponent,
+    property: (typeof OVERRIDE_PROPERTIES)[number]
+  ) => {
+    const spec = component.properties[property.id]
+    if (!spec) return null
+
+    const key = overrideKey(component, property.id)
+    const value = config.overrides[key]
+    const label = spec.label ?? property.label
+
+    return (
+      <div key={property.id} className="flex items-center">
+        <div className="min-w-0 flex-1">
+          <TokenPicker
+            name={label}
+            hint={spec.hint}
+            property={[...new Set(spec.targets.flatMap((t) => t.declarations))].join(", ")}
+            emptyLabel="Style default"
+            kind={property.kind}
+            value={value}
+            onChange={(path) => update((c) => withOverride(c, key, path))}
+            onPreview={(path) => preview(path ? withOverride(config, key, path) : null)}
+          />
+        </div>
+        {value && (
+          <Button
+            variant="ghost"
+            size="icon-xs"
+            aria-label={`Reset ${component.title} ${label} to the style default`}
+            title="Reset to style default"
+            onClick={() => update((c) => withOverride(c, key, null))}
+          >
+            <XIcon />
+          </Button>
+        )}
+      </div>
+    )
+  }
 
   return (
     <aside className="dark isolate z-10 flex max-h-[45svh] min-h-0 w-full flex-col self-start overflow-hidden rounded-2xl bg-card/90 text-card-foreground ring-1 ring-foreground/10 backdrop-blur-xl md:h-full md:max-h-full md:w-(--customizer-width)">
@@ -141,17 +212,69 @@ export function Customizer({ editor }: { editor: ThemeEditor }) {
           }
         />
         <OptionPicker
-          label="Accent"
-          options={ACCENT_OPTIONS}
+          label="Theme"
+          options={FAMILY_OPTIONS}
           value={familyOf(config.light.primary)}
-          onChange={(family) => update((c) => applyAccentFamily(c, family))}
-          onPreview={(family) => preview(family ? applyAccentFamily(config, family) : null)}
+          onChange={(family) => update((c) => applyThemeFamily(c, family))}
+          onPreview={(family) => preview(family ? applyThemeFamily(config, family) : null)}
           adornment={<TokenSwatch path={config[mode].primary} kind="color" />}
         />
-        {tokenPicker(RADIUS_VAR, "card", "Radius")}
+        <OptionPicker
+          label="Chart Color"
+          options={FAMILY_OPTIONS}
+          value={familyOf(config.light["chart-1"])}
+          onChange={(family) => update((c) => applyChartFamily(c, family))}
+          onPreview={(family) => preview(family ? applyChartFamily(config, family) : null)}
+          adornment={
+            <span className="flex -space-x-1">
+              {CHART_VARS.map((name) => (
+                <TokenSwatch key={name} path={config[mode][name]} kind="color" className="size-3.5" />
+              ))}
+            </span>
+          }
+        />
+        <div className="flex flex-col gap-1">
+          {tokenPicker(RADIUS_VAR, "card", "Radius Multiplier")}
+          <p className="px-2.5 text-[11px] leading-snug text-muted-foreground">
+            Base radius only: each Style sets how much of it each component uses. Some styles, like
+            Lyra and Sera, ignore it.
+          </p>
+        </div>
         {tokenPicker(TYPOGRAPHY_VARS[0], "card", "Font")}
         {tokenPicker(TYPOGRAPHY_VARS[1], "card", "Heading")}
-        {tokenPicker(SPACING_VAR, "card", "Spacing unit")}
+        <div className="flex flex-col gap-1">
+          {tokenPicker(SPACING_VAR, "card", "Spacing Multiplier")}
+          <p className="px-2.5 text-[11px] leading-snug text-muted-foreground">
+            Scales every padding, gap and size. Per-component spacing comes from the Style.
+          </p>
+        </div>
+
+        <Separator className="-mx-3 my-1 w-auto!" />
+
+        <div className="flex flex-col gap-0.5 px-2">
+          <span className="text-xs font-medium">Theme overrides</span>
+          <span className="text-[11px] leading-snug text-muted-foreground">
+            Component radius, spacing, sizes and type that replace the Style's own values.
+            Exported as shadcn.overrides.css.
+          </span>
+        </div>
+        <div className="-mx-1 flex flex-col gap-1">
+          {OVERRIDE_COMPONENTS.map((component) => {
+            const active = OVERRIDE_PROPERTIES.filter(
+              (p) => config.overrides[overrideKey(component, p.id)]
+            ).length
+
+            return (
+              <Section
+                key={component.id}
+                title={component.title}
+                count={active || undefined}
+              >
+                {OVERRIDE_PROPERTIES.map((p) => overridePicker(component, p))}
+              </Section>
+            )
+          })}
+        </div>
 
         <Separator className="-mx-3 my-1 w-auto!" />
 

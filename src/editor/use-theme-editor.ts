@@ -28,6 +28,7 @@ function sanitize(config: Partial<ThemeConfig> | undefined): ThemeConfig {
     light: clean(config?.light, DEFAULT_CONFIG.light),
     dark: clean(config?.dark, DEFAULT_CONFIG.dark),
     global: clean(config?.global, DEFAULT_CONFIG.global),
+    overrides: clean(config?.overrides, DEFAULT_CONFIG.overrides),
   }
 }
 

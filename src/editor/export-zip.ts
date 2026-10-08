@@ -2,6 +2,7 @@ import {
   ADAPTER_FILE_NAMES,
   buildAdapterFiles,
   buildGlobalsCss,
+  buildOverridesCss,
   buildShadcnThemeCss,
   TAILWIND_THEME_CSS,
   type ThemeConfig,
@@ -32,6 +33,7 @@ async function collectFiles(config: ThemeConfig) {
   files["css/tokens.css"] = tokensCss
   files["css/tailwind.theme.css"] = TAILWIND_THEME_CSS
   files["css/shadcn.theme.css"] = buildShadcnThemeCss(config)
+  files["css/shadcn.overrides.css"] = buildOverridesCss(config)
   files["css/globals.css"] = buildGlobalsCss(config)
 
   return files

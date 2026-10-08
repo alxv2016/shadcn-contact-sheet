@@ -34,7 +34,8 @@ export function TokenSwatch({
   kind: TokenKind
   className?: string
 }) {
-  const value = String(getToken(path)?.value ?? "")
+  // Resolve to the primitive: a semantic token's own catalog value can be stale.
+  const value = String((path ? getAliasChain(path).at(-1) : undefined)?.value ?? getToken(path)?.value ?? "")
   const base = "inline-flex size-4 shrink-0 items-center justify-center"
 
   switch (kind) {
@@ -83,7 +84,36 @@ export function TokenSwatch({
           style={{ boxShadow: value }}
         />
       )
+    case "control-size":
+    case "icon-size":
+      return (
+        <span className={cn(base, className)}>
+          <span
+            className="rounded-[2px] ring-1 ring-foreground/70 ring-inset"
+            style={{ width: `min(calc(${value} / 2.5), 1rem)`, height: `min(calc(${value} / 2.5), 1rem)` }}
+          />
+        </span>
+      )
+    case "font-size":
+    case "font-weight":
+      return (
+        <span
+          className={cn(base, "leading-none", className)}
+          style={
+            kind === "font-size"
+              ? { fontSize: `min(calc(${value} * 0.75), 1rem)` }
+              : { fontSize: "11px", fontWeight: Number(value) || undefined }
+          }
+        >
+          Aa
+        </span>
+      )
   }
+}
+
+// Font weights have no px; order them by their numeric value instead.
+function sizeOf(token: DesignToken) {
+  return token.px ?? (Number(token.value) || 0)
 }
 
 function groupTokens(kind: TokenKind) {
@@ -108,7 +138,7 @@ function groupTokens(kind: TokenKind) {
   } else {
     groups.push({
       heading: "Primitive tokens",
-      tokens: primitives.sort((a, b) => (a.px ?? 0) - (b.px ?? 0)),
+      tokens: primitives.sort((a, b) => sizeOf(a) - sizeOf(b)),
     })
   }
 
@@ -131,7 +161,7 @@ function AliasChain({
 }) {
   const chain = path ? getAliasChain(path) : []
   const resolved = chain.at(-1)
-  const chainText = [`--${name}`, ...chain.map((token) => token.path)].join(" › ")
+  const chainText = [name, ...chain.map((token) => token.path)].join(" › ")
   const valueText = resolved
     ? resolved.px !== undefined
       ? `${resolved.px}px · ${resolved.value}`
@@ -141,7 +171,7 @@ function AliasChain({
   return (
     <div className="grid gap-1 font-mono text-[11px] leading-4">
       <div className="truncate text-muted-foreground" title={chainText}>
-        <span className="text-foreground">--{name}</span>
+        <span className="text-foreground">{name}</span>
         {chain.map((token) => (
           <React.Fragment key={token.path}>
             <span className="px-1 opacity-60">›</span>
@@ -166,6 +196,8 @@ function AliasChain({
 export function TokenPicker({
   name,
   hint,
+  property,
+  emptyLabel = "—",
   kind,
   value,
   onChange,
@@ -174,6 +206,10 @@ export function TokenPicker({
 }: {
   name: string
   hint?: string
+  /** What the token is assigned to in the header chain; defaults to --name. */
+  property?: string
+  /** Shown when no token is set. */
+  emptyLabel?: string
   kind: TokenKind
   value: string | undefined
   onChange: (path: string) => void
@@ -184,17 +220,22 @@ export function TokenPicker({
   const [highlighted, setHighlighted] = React.useState(value ?? "")
   const groups = React.useMemo(() => groupTokens(kind), [kind])
   const listRef = React.useRef<HTMLDivElement>(null)
+  // A value outside the list (e.g. a semantic default) selects its primitive.
+  const selected =
+    value && !groups.some((g) => g.tokens.some((t) => t.path === value))
+      ? getAliasChain(value).at(-1)?.path
+      : value
 
   React.useEffect(() => {
     if (!open) return
-    setHighlighted(value ?? "")
+    setHighlighted(selected ?? "")
     // Bring the current token into view once the list has rendered.
     requestAnimationFrame(() => {
       listRef.current
         ?.querySelector("[data-selected=true]")
         ?.scrollIntoView({ block: "center" })
     })
-  }, [open, value])
+  }, [open, selected])
 
   return (
     <Popover
@@ -227,7 +268,7 @@ export function TokenPicker({
             <TokenSwatch path={value} kind={kind} />
             <span className="shrink-0 font-mono text-xs">{name}</span>
             <span className="ml-auto truncate pl-2 text-right text-xs text-muted-foreground">
-              {tokenLabel(value, kind)}
+              {value ? tokenLabel(value, kind) : emptyLabel}
             </span>
           </button>
         )}
@@ -245,7 +286,7 @@ export function TokenPicker({
             <span className="shrink-0 text-sm font-medium">{name}</span>
             {hint && <span className="truncate text-xs text-muted-foreground">{hint}</span>}
           </div>
-          <AliasChain name={name} path={highlighted || value} kind={kind} />
+          <AliasChain name={property ?? `--${name}`} path={highlighted || value} kind={kind} />
         </div>
         <Command
           value={highlighted}
@@ -277,7 +318,7 @@ export function TokenPicker({
                       {token.ref ? `→ ${tokenLabel(token.ref, kind)}` : formatValue(token)}
                     </span>
                     <CheckIcon
-                      className={cn("size-3.5!", token.path === value ? "opacity-100" : "opacity-0")}
+                      className={cn("size-3.5!", token.path === selected ? "opacity-100" : "opacity-0")}
                     />
                   </CommandItem>
                 ))}
@@ -297,7 +338,7 @@ export type Option = {
   icon?: React.ReactNode
 }
 
-/** Small fixed list picker (style, accent family) with hover previews. */
+/** Small fixed list picker (style, theme and chart color families) with hover previews. */
 export function OptionPicker({
   label,
   options,
