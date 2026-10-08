@@ -1,0 +1,62 @@
+{
+  "cp": {
+    "leading": {
+      "100": {
+        "$description": "Export-only line-height ratio. For direct Figma use, convert ratios to percentage line heights.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "LINE_HEIGHT"
+          ],
+          "com.figma.variableId": "VariableID:3:94",
+          "com.figma.codeSyntax": {
+            "WEB": "line-height-100"
+          }
+        },
+        "$type": "number",
+        "$value": 1.15
+      },
+      "200": {
+        "$description": "Export-only line-height ratio. For direct Figma use, convert ratios to percentage line heights.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "LINE_HEIGHT"
+          ],
+          "com.figma.variableId": "VariableID:3:95",
+          "com.figma.codeSyntax": {
+            "WEB": "line-height-200"
+          }
+        },
+        "$type": "number",
+        "$value": 1.25
+      },
+      "300": {
+        "$description": "Export-only line-height ratio. For direct Figma use, convert ratios to percentage line heights.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "LINE_HEIGHT"
+          ],
+          "com.figma.variableId": "VariableID:3:96",
+          "com.figma.codeSyntax": {
+            "WEB": "line-height-300"
+          }
+        },
+        "$type": "number",
+        "$value": 1.45
+      },
+      "400": {
+        "$description": "Export-only line-height ratio. For direct Figma use, convert ratios to percentage line heights.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "LINE_HEIGHT"
+          ],
+          "com.figma.variableId": "VariableID:3:97",
+          "com.figma.codeSyntax": {
+            "WEB": "line-height-400"
+          }
+        },
+        "$type": "number",
+        "$value": 1.5
+      }
+    }
+  }
+}

@@ -1,20 +1,22 @@
 import { STYLES } from "@/registry/styles"
 import {
   COLOR_FAMILIES,
+  colorFamilyOf,
   familyStep,
   getAliasChain,
   getToken,
+  tokenPath,
   TOKENS,
 } from "@/theme/catalog"
 import { DEFAULT_CONFIG, type Aliases, type ThemeConfig } from "@/theme/config"
 
-/** Primitive a token ultimately resolves to, e.g. color.bg-action-primary -> color.blue-600. */
+/** Primitive a token ultimately resolves to, e.g. cp.color.bg-action-primary -> cp.color.grey-900. */
 export function primitiveOf(path: string | undefined) {
   return path ? getAliasChain(path).at(-1)?.path : undefined
 }
 
 export function familyOf(path: string | undefined) {
-  return primitiveOf(path)?.match(/^color\.([a-z]+)-\d+$/)?.[1]
+  return colorFamilyOf(primitiveOf(path))
 }
 
 export const FAMILY_NAMES = Object.keys(COLOR_FAMILIES)
@@ -51,8 +53,8 @@ export function bestForeground(background: string, candidates: string[]) {
 
 /**
  * Prefer the alias already committed in ./tokens when it lands on the same
- * primitive, so picking "blue" restores semantic tokens such as
- * color.bg-action-primary instead of raw color.blue-600.
+ * primitive, so picking "grey" restores semantic tokens such as
+ * cp.color.bg-action-primary instead of raw cp.color.grey-900.
  */
 function preferDefault(defaults: Aliases, name: string, path: string | undefined) {
   if (!path) return undefined
@@ -111,7 +113,7 @@ export function applyThemeFamily(config: ThemeConfig, family: string): ThemeConf
         selection: 100,
         "selection-foreground": 900,
       },
-      ["color.text-action-primary", "color.text-default", "color.white", "color.grey-900"]
+      ["text-inverse", "text-default", "white", "grey-900"].map((name) => tokenPath("color", name))
     ),
     dark: withFamily(
       config.dark,
@@ -124,7 +126,7 @@ export function applyThemeFamily(config: ThemeConfig, family: string): ThemeConf
         "sidebar-ring": 400,
         selection: 800,
       },
-      ["color.white", "color.grey-900"]
+      ["white", "grey-900"].map((name) => tokenPath("color", name))
     ),
   }
 }

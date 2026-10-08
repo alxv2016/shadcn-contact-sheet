@@ -79,7 +79,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.slate-800}"
+        "$value": "{cp.color.slate-600}"
       },
       "bg-action-basic-hover": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -95,7 +95,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.slate-600}"
+        "$value": "{cp.color.slate-500}"
       },
       "bg-action-danger": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -159,7 +159,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-100}"
+        "$value": "{cp.color.grey-800}"
       },
       "bg-action-inverse": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -175,7 +175,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.white}"
+        "$value": "{cp.color.grey-800}"
       },
       "bg-action-inverse-active": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -223,7 +223,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.white}"
+        "$value": "{cp.color.grey-800}"
       },
       "bg-action-outline-active": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -239,7 +239,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-100}"
+        "$value": "{cp.color.grey-700}"
       },
       "bg-action-outline-hover": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -255,7 +255,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-50}"
+        "$value": "{cp.color.grey-800}"
       },
       "bg-action-primary": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -271,7 +271,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-900}"
+        "$value": "{cp.color.grey-50}"
       },
       "bg-action-primary-active": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -287,7 +287,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-900}"
+        "$value": "{cp.color.grey-50}"
       },
       "bg-action-primary-hover": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -303,7 +303,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-800}"
+        "$value": "{cp.color.grey-100}"
       },
       "bg-action-secondary": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -319,7 +319,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-100}"
+        "$value": "{cp.color.grey-700}"
       },
       "bg-action-secondary-active": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -335,7 +335,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-300}"
+        "$value": "{cp.color.grey-800}"
       },
       "bg-action-secondary-hover": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -351,7 +351,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-200}"
+        "$value": "{cp.color.grey-700}"
       },
       "bg-default": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -367,7 +367,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.white}"
+        "$value": "{cp.color.black}"
       },
       "bg-gradient-stop-primary": {
         "$extensions": {
@@ -405,7 +405,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-100}"
+        "$value": "{cp.color.grey-800}"
       },
       "bg-selection": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -421,7 +421,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.blue-50}"
+        "$value": "{cp.color.blue-100}"
       },
       "bg-skeleton": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -437,7 +437,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-100}"
+        "$value": "{cp.color.grey-800}"
       },
       "bg-skeleton-highlight": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -453,7 +453,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-50}"
+        "$value": "{cp.color.grey-700}"
       },
       "bg-status-amber": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -549,7 +549,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-50}"
+        "$value": "{cp.color.grey-600}"
       },
       "bg-status-muted-solid": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -565,7 +565,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-100}"
+        "$value": "{cp.color.grey-700}"
       },
       "bg-status-success": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -677,7 +677,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-50}"
+        "$value": "{cp.color.grey-700}"
       },
       "bg-unavailable": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -693,7 +693,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.slate-50}"
+        "$value": "{cp.color.slate-700}"
       },
       "border-action-danger": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -709,7 +709,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.red-600}"
+        "$value": "{cp.color.red-100}"
       },
       "border-action-primary": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -725,7 +725,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-900}"
+        "$value": "{cp.color.grey-50}"
       },
       "border-action-secondary": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -741,7 +741,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-200}"
+        "$value": "{cp.color.grey-400}"
       },
       "border-default": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -757,7 +757,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-100}"
+        "$value": "{cp.color.grey-800}"
       },
       "border-disabled": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -773,7 +773,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-100}"
+        "$value": "{cp.color.grey-800}"
       },
       "border-focus": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -805,7 +805,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-700}"
+        "$value": "{cp.color.grey-100}"
       },
       "border-outline": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -821,7 +821,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-50}"
+        "$value": "{cp.color.grey-700}"
       },
       "border-selected": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -837,7 +837,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.blue-600}"
+        "$value": "{cp.color.blue-100}"
       },
       "border-status-amber": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -949,7 +949,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-400}"
+        "$value": "{cp.color.grey-800}"
       },
       "border-subtle": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -965,7 +965,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-100}"
+        "$value": "{cp.color.grey-700}"
       },
       "focus-ring": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -981,7 +981,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.blue-500}"
+        "$value": "{cp.color.blue-200}"
       },
       "focus-ring-subtle": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -997,7 +997,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.blue-200}"
+        "$value": "{cp.color.blue-400}"
       },
       "icon-brand": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1013,7 +1013,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.orange-600}"
+        "$value": "{cp.color.orange-100}"
       },
       "icon-default": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1029,7 +1029,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-800}"
+        "$value": "{cp.color.grey-100}"
       },
       "icon-disabled": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1045,7 +1045,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-400}"
+        "$value": "{cp.color.grey-900}"
       },
       "icon-inverse": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1061,7 +1061,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.white}"
+        "$value": "{cp.color.black}"
       },
       "icon-muted": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1077,7 +1077,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-500}"
+        "$value": "{cp.color.grey-600}"
       },
       "icon-ondark": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1125,7 +1125,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-600}"
+        "$value": "{cp.color.grey-300}"
       },
       "icon-secondary": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1141,7 +1141,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-600}"
+        "$value": "{cp.color.grey-200}"
       },
       "icon-status-amber": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1157,7 +1157,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.orange-600}"
+        "$value": "{cp.color.orange-100}"
       },
       "icon-status-danger": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1173,7 +1173,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.red-600}"
+        "$value": "{cp.color.red-100}"
       },
       "icon-status-info": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1189,7 +1189,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.blue-600}"
+        "$value": "{cp.color.blue-100}"
       },
       "icon-status-success": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1205,7 +1205,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.green-700}"
+        "$value": "{cp.color.green-100}"
       },
       "icon-status-unavailable": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1221,7 +1221,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.slate-700}"
+        "$value": "{cp.color.slate-200}"
       },
       "icon-status-warning": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1237,7 +1237,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.yellow-600}"
+        "$value": "{cp.color.yellow-100}"
       },
       "surface-default": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1253,7 +1253,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.white}"
+        "$value": "{cp.color.black}"
       },
       "surface-disabled": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1269,7 +1269,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-100}"
+        "$value": "{cp.color.grey-800}"
       },
       "surface-inverse": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1285,7 +1285,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-900}"
+        "$value": "{cp.color.grey-50}"
       },
       "surface-muted": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1301,7 +1301,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-100}"
+        "$value": "{cp.color.grey-700}"
       },
       "surface-raised": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1317,7 +1317,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.white}"
+        "$value": "{cp.color.grey-900}"
       },
       "surface-selected": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1333,7 +1333,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.blue-50}"
+        "$value": "{cp.color.blue-100}"
       },
       "surface-subtle": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1349,7 +1349,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-50}"
+        "$value": "{cp.color.grey-800}"
       },
       "surface-unavailable": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1365,7 +1365,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.slate-50}"
+        "$value": "{cp.color.slate-800}"
       },
       "text-default": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1381,7 +1381,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-900}"
+        "$value": "{cp.color.grey-50}"
       },
       "text-disabled": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1397,7 +1397,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-400}"
+        "$value": "{cp.color.grey-900}"
       },
       "text-inverse": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1413,7 +1413,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.white}"
+        "$value": "{cp.color.black}"
       },
       "text-link": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1429,7 +1429,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.blue-600}"
+        "$value": "{cp.color.blue-200}"
       },
       "text-link-active": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1445,7 +1445,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.blue-800}"
+        "$value": "{cp.color.blue-400}"
       },
       "text-link-hover": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1461,7 +1461,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.blue-700}"
+        "$value": "{cp.color.blue-300}"
       },
       "text-muted": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1477,7 +1477,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-600}"
+        "$value": "{cp.color.grey-400}"
       },
       "text-ondark": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1525,7 +1525,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-600}"
+        "$value": "{cp.color.grey-300}"
       },
       "text-secondary": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1541,7 +1541,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-700}"
+        "$value": "{cp.color.grey-500}"
       },
       "text-selection": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1557,7 +1557,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.blue-900}"
+        "$value": "{cp.color.blue-800}"
       },
       "text-status-amber": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1573,7 +1573,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.orange-800}"
+        "$value": "{cp.color.orange-200}"
       },
       "text-status-danger": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1589,7 +1589,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.red-700}"
+        "$value": "{cp.color.red-200}"
       },
       "text-status-info": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1605,7 +1605,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.blue-800}"
+        "$value": "{cp.color.blue-200}"
       },
       "text-status-muted": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1621,7 +1621,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-900}"
+        "$value": "{cp.color.grey-200}"
       },
       "text-status-success": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1637,7 +1637,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.green-800}"
+        "$value": "{cp.color.green-200}"
       },
       "text-status-unavailable": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1653,7 +1653,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.slate-800}"
+        "$value": "{cp.color.slate-200}"
       },
       "text-status-warning": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1669,7 +1669,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.yellow-800}"
+        "$value": "{cp.color.yellow-200}"
       },
       "text-strong": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1685,7 +1685,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.black}"
+        "$value": "{cp.color.white}"
       },
       "text-subtle": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1701,7 +1701,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.grey-500}"
+        "$value": "{cp.color.grey-200}"
       },
       "text-unavailable": {
         "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
@@ -1717,7 +1717,7 @@
           }
         },
         "$type": "color",
-        "$value": "{cp.color.slate-700}"
+        "$value": "{cp.color.slate-300}"
       }
     }
   }

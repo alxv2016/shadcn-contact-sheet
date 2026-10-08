@@ -5,7 +5,7 @@ A theme creator for [shadcn/ui](https://ui.shadcn.com) that is driven by your ow
 It mirrors shadcn's [Create](https://ui.shadcn.com/create) page — pick a style, colors, radius and fonts and watch every component update — with one difference: **every shadcn theme variable is an alias of a design-system token**. Instead of choosing raw colors, you choose tokens from your [Style Dictionary](https://styledictionary.com) package, and the result is a token mapping you can keep in your pipeline.
 
 ```css
---primary: var(--color-bg-action-primary); /* color.bg-action-primary → color.blue-600 = hsl(215, 100%, 40%) */
+--primary: var(--cp-color-bg-action-primary); /* cp.color.bg-action-primary → cp.color.grey-900 = hsl(0, 0%, 13%) */
 ```
 
 ## Features
@@ -57,16 +57,18 @@ The app has two pages: the **editor** (`index.html`) and the **preview** (`previ
 
 ### Design tokens
 
-`tokens/primitive.*.json` and `tokens/semantic.*.json` are the design-system sources (DTCG format, exported by Token Bridge for Figma). Semantic tokens alias primitives, e.g. `color.bg-default → color.white`, and the generated CSS keeps that chain as `var()` references.
+`tokens/primitives.*.json` and `tokens/semantic.*.json` are the design-system sources (DTCG format, exported by Token Bridge for Figma). Every token sits under the `cp` namespace. Semantic tokens alias primitives, e.g. `cp.color.bg-default → cp.color.white`, and the generated CSS keeps that chain as `var()` references (`--cp-color-bg-default: var(--cp-color-white)`).
+
+`tokens/dark.semantic.color.json` is the dark mode of `semantic.color.json`: the same token names aliased to dark primitives. The build writes those under `.dark` in `tokens.css`, so semantic colors switch with the mode on their own.
 
 To pull in updated tokens from your token package:
 
 ```bash
-npm run tokens:sync                                   # default: ~/Desktop/style-dictionary-tokens/tokens
+npm run tokens:sync                                   # default: ~/Desktop/cp-design-tokens
 TOKENS_DIR=/path/to/your-package/tokens npm run tokens:sync
 ```
 
-This copies only `primitive.*` and `semantic.*` files; the shadcn mapping files below are never overwritten.
+This copies only `primitive(s).*`, `semantic.*` and `dark.semantic.*` files; the shadcn mapping files below are never overwritten. Files removed from the package are not deleted here.
 
 ### The shadcn theme token mapping
 
@@ -75,14 +77,14 @@ The mapping lives in three files in `tokens/`:
 | File | Contents |
 | --- | --- |
 | `shadcn.semantic.json` | Light-mode colors and `radius` (Token Bridge adapter format) |
-| `dark.shadcn.semantic.json` | Dark-mode colors |
+| `dark.shadcn.semantic.json` | Dark-mode colors (usually the same semantic tokens as light, which resolve to their dark values) |
 | `shadcn.extensions.json` | Fonts, spacing unit, shadows and focus ring (the same in both modes) |
 
 Each entry points a shadcn variable at a token:
 
 ```json
 {
-  "primary": { "$type": "color", "$value": "{color.bg-action-primary}" }
+  "primary": { "$type": "color", "$value": "{cp.color.bg-action-primary}" }
 }
 ```
 
@@ -92,16 +94,16 @@ Each entry points a shadcn variable at a token:
 
 `tailwind.theme.css` resets Tailwind's own scales with `initial` and rebuilds them from your tokens:
 
-- Every token becomes a utility: `bg-blue-500`, `bg-bg-default`, `text-body`, `rounded-card`, `shadow-raised`, `gap-stack-md`, ….
+- Every token becomes a utility under its name without the `cp` namespace: `bg-blue-500`, `bg-bg-default`, `text-body`, `rounded-card`, `shadow-raised`, `gap-gap-md`, ….
 - Tailwind names that shadcn components rely on (`text-sm`, `font-medium`, `leading-tight`, …) point at your nearest token, and only when it is within 10% of Tailwind's default value. Names with no close token are not generated.
 - Breakpoints are written as literal px values from your breakpoint tokens, because media queries can't read CSS variables.
 
 ### Rem values
 
-The Token Bridge export authored rem values against a 22px root ("Base unit for rem conversion: 22"). Browsers use 16px, so the build rebases rem dimensions to keep the pixel sizes designed in Figma (`0.727rem` → 16px → `1rem`). Override the bases if your export changes:
+The cp export authors rem values against a 16px root (`body` = `1rem`), the browser default, so they pass through unchanged. For an export authored against another root, set the source base and the build rebases rem dimensions to keep the pixel sizes designed in Figma (at 22: `0.727rem` → 16px → `1rem`):
 
 ```bash
-TOKENS_SOURCE_REM_BASE=16 TOKENS_TARGET_REM_BASE=16 npm run tokens:build
+TOKENS_SOURCE_REM_BASE=22 npm run tokens:build
 ```
 
 ## Using the editor
@@ -159,7 +161,6 @@ src/
 - **Token Bridge build:** the stock `build-tokens.js` in the Token Bridge package fails on `shadcn.semantic.json`, because its `border` and `radius` keys collide with the design system's `border.*` and `radius.*` groups. This project's build works around it, and `globals.css` from Save Theme works on its own.
 - **Tailwind palette colors** that aren't design tokens (`sky`, `purple`, `gray`, `*-950`, …) and `font-light` aren't generated, so a few shadcn examples that use them lose those styles.
 - **Icons:** only Lucide is included (shadcn's Create page also offers Tabler, Hugeicons, Phosphor and Remix).
-- **Dark mode** has no dark tokens in the design system yet, so the dark mapping mostly points at primitives.
 - `shadcn.extensions.json` isn't part of the Token Bridge adapter contract, so the Token Bridge package ignores it.
 
 ## Credits

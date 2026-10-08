@@ -11,12 +11,25 @@ import {
   CommandList,
 } from "@/registry/radix/ui/command"
 import { Popover, PopoverContent, PopoverTrigger } from "@/registry/radix/ui/popover"
-import { getAliasChain, getToken, TOKENS, type DesignToken } from "@/theme/catalog"
+import {
+  colorFamilyOf,
+  getAliasChain,
+  getToken,
+  localPath,
+  tokenValue,
+  TOKENS,
+  type DesignToken,
+  type TokenMode,
+} from "@/theme/catalog"
 import { TOKEN_FILTERS, type TokenKind } from "@/theme/schema"
+
+/** Mode the editor is showing; swatches and chains use that mode's values. */
+export const TokenModeContext = React.createContext<TokenMode>("light")
 
 export function tokenLabel(path: string | undefined, kind: TokenKind) {
   if (!path) return "—"
-  return kind === "color" ? path.replace(/^color\./, "") : path
+  const local = localPath(path)
+  return kind === "color" ? local.replace(/^color\./, "") : local
 }
 
 function formatValue(token: DesignToken) {
@@ -34,7 +47,8 @@ export function TokenSwatch({
   kind: TokenKind
   className?: string
 }) {
-  const value = String(getToken(path)?.value ?? "")
+  const mode = React.useContext(TokenModeContext)
+  const value = String(tokenValue(getToken(path), mode) ?? "")
   const base = "inline-flex size-4 shrink-0 items-center justify-center"
 
   switch (kind) {
@@ -125,7 +139,7 @@ function groupTokens(kind: TokenKind) {
   if (kind === "color") {
     const families = new Map<string, DesignToken[]>()
     for (const token of primitives) {
-      const family = token.path.match(/^color\.([a-z]+)-\d+$/)?.[1] ?? "base"
+      const family = colorFamilyOf(token.path) ?? "base"
       families.set(family, [...(families.get(family) ?? []), token])
     }
     for (const [family, list] of families) {
@@ -158,13 +172,14 @@ function AliasChain({
   path: string | undefined
   kind: TokenKind
 }) {
-  const chain = path ? getAliasChain(path) : []
+  const mode = React.useContext(TokenModeContext)
+  const chain = path ? getAliasChain(path, mode) : []
   const resolved = chain.at(-1)
   const chainText = [name, ...chain.map((token) => token.path)].join(" › ")
   const valueText = resolved
     ? resolved.px !== undefined
       ? `${resolved.px}px · ${resolved.value}`
-      : String(resolved.value)
+      : String(tokenValue(resolved, mode))
     : "—"
 
   return (
@@ -217,12 +232,13 @@ export function TokenPicker({
 }) {
   const [open, setOpen] = React.useState(false)
   const [highlighted, setHighlighted] = React.useState(value ?? "")
+  const mode = React.useContext(TokenModeContext)
   const groups = React.useMemo(() => groupTokens(kind), [kind])
   const listRef = React.useRef<HTMLDivElement>(null)
   // A value outside the list (e.g. a semantic default) selects its primitive.
   const selected =
     value && !groups.some((g) => g.tokens.some((t) => t.path === value))
-      ? getAliasChain(value).at(-1)?.path
+      ? getAliasChain(value, mode).at(-1)?.path
       : value
 
   React.useEffect(() => {
@@ -248,7 +264,7 @@ export function TokenPicker({
         {variant === "card" ? (
           <button
             type="button"
-            className="relative w-full rounded-lg px-2.5 py-2 text-left ring-1 ring-foreground/10 outline-none select-none hover:bg-muted focus-visible:ring-foreground/50 data-[state=open]:bg-muted"
+            className="relative w-full rounded-lg px-2.5 py-2 text-left ring-1 ring-foreground/10 outline-none select-none hover:bg-muted data-[state=open]:bg-muted"
           >
             <div className="text-xs text-muted-foreground">{hint ?? name}</div>
             <div className="truncate pr-6 text-sm font-medium">{tokenLabel(value, kind)}</div>
@@ -262,7 +278,7 @@ export function TokenPicker({
           <button
             type="button"
             title={hint}
-            className="flex w-full min-w-0 items-center gap-2 rounded-md px-2 py-1.5 text-left outline-none select-none hover:bg-muted focus-visible:ring-1 focus-visible:ring-foreground/50 data-[state=open]:bg-muted"
+            className="flex w-full min-w-0 items-center gap-2 rounded-md px-2 py-1.5 text-left outline-none select-none hover:bg-muted data-[state=open]:bg-muted"
           >
             <TokenSwatch path={value} kind={kind} />
             <span className="shrink-0 font-mono text-xs">{name}</span>
@@ -372,7 +388,7 @@ export function OptionPicker({
       <PopoverTrigger asChild>
         <button
           type="button"
-          className="relative w-full rounded-lg px-2.5 py-2 text-left ring-1 ring-foreground/10 outline-none select-none hover:bg-muted focus-visible:ring-foreground/50 data-[state=open]:bg-muted"
+          className="relative w-full rounded-lg px-2.5 py-2 text-left ring-1 ring-foreground/10 outline-none select-none hover:bg-muted data-[state=open]:bg-muted"
         >
           <div className="text-xs text-muted-foreground">{label}</div>
           <div className="truncate pr-6 text-sm font-medium">{current?.title ?? "Custom"}</div>

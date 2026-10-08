@@ -1,0 +1,71 @@
+{
+  "cp": {
+    "shadow": {
+      "floating": {
+        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+        "$extensions": {
+          "com.figma.scopes": [],
+          "com.figma.variableId": "VariableID:107:2052",
+          "com.figma.codeSyntax": {
+            "WEB": "elevation-floating"
+          },
+          "com.figma.type": "string"
+        },
+        "$type": "string",
+        "$value": "{cp.shadow.400}"
+      },
+      "low": {
+        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+        "$extensions": {
+          "com.figma.scopes": [],
+          "com.figma.variableId": "VariableID:107:2053",
+          "com.figma.codeSyntax": {
+            "WEB": "elevation-low"
+          },
+          "com.figma.type": "string"
+        },
+        "$type": "string",
+        "$value": "{cp.shadow.100}"
+      },
+      "modal": {
+        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+        "$extensions": {
+          "com.figma.scopes": [],
+          "com.figma.variableId": "VariableID:107:2054",
+          "com.figma.codeSyntax": {
+            "WEB": "elevation-modal"
+          },
+          "com.figma.type": "string"
+        },
+        "$type": "string",
+        "$value": "{cp.shadow.500}"
+      },
+      "overlay": {
+        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+        "$extensions": {
+          "com.figma.scopes": [],
+          "com.figma.variableId": "VariableID:107:2055",
+          "com.figma.codeSyntax": {
+            "WEB": "elevation-overlay"
+          },
+          "com.figma.type": "string"
+        },
+        "$type": "string",
+        "$value": "{cp.shadow.300}"
+      },
+      "raised": {
+        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+        "$extensions": {
+          "com.figma.scopes": [],
+          "com.figma.variableId": "VariableID:107:2056",
+          "com.figma.codeSyntax": {
+            "WEB": "elevation-raised"
+          },
+          "com.figma.type": "string"
+        },
+        "$type": "string",
+        "$value": "{cp.shadow.200}"
+      }
+    }
+  }
+}

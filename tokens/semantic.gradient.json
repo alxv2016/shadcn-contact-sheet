@@ -1,0 +1,16 @@
+{
+  "cp": {
+    "gradient": {
+      "aura": {
+        "$extensions": {
+          "com.figma.scopes": [],
+          "com.figma.variableId": "VariableID:229:411",
+          "com.figma.codeSyntax": {},
+          "com.figma.type": "string"
+        },
+        "$type": "string",
+        "$value": "linear-gradient(90deg, var(--cp-color-pink-500) 12.66%, var(--cp-color-orange-500) 94.55%)"
+      }
+    }
+  }
+}

@@ -2,46 +2,46 @@
   "$description": "Mode-independent shadcn/Tailwind theme variables (fonts, spacing unit, shadows) aliased to design-system tokens. Used by this app; not part of the Token Bridge adapter contract.",
   "font-sans": {
     "$type": "string",
-    "$value": "{font-stack.sans}"
+    "$value": "{cp.font.sans}"
   },
   "font-heading": {
     "$type": "string",
-    "$value": "{font-stack.sans}"
+    "$value": "{cp.font.sans}"
   },
   "spacing": {
     "$type": "dimension",
-    "$value": "{spacing.2xs}"
+    "$value": "{cp.spacing.2xs}"
   },
   "shadow-xs": {
     "$type": "string",
-    "$value": "{elevation.low}"
+    "$value": "{cp.shadow.low}"
   },
   "shadow-sm": {
     "$type": "string",
-    "$value": "{elevation.raised}"
+    "$value": "{cp.shadow.raised}"
   },
   "shadow-md": {
     "$type": "string",
-    "$value": "{elevation.overlay}"
+    "$value": "{cp.shadow.overlay}"
   },
   "shadow-lg": {
     "$type": "string",
-    "$value": "{elevation.floating}"
+    "$value": "{cp.shadow.floating}"
   },
   "shadow-xl": {
     "$type": "string",
-    "$value": "{elevation.modal}"
+    "$value": "{cp.shadow.modal}"
   },
   "shadow-2xl": {
     "$type": "string",
-    "$value": "{elevation.modal}"
+    "$value": "{cp.shadow.modal}"
   },
   "focus-ring-width": {
     "$type": "dimension",
-    "$value": "{border.width-focus}"
+    "$value": "{cp.border.width-focus}"
   },
   "focus-ring-offset": {
     "$type": "dimension",
-    "$value": "{border.02}"
+    "$value": "{cp.border.2}"
   }
 }

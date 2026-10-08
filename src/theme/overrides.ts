@@ -12,6 +12,8 @@ export type OverrideTarget = {
   declarations: string[]
   /** Needed where the style itself uses an important utility (e.g. size-3!). */
   important?: boolean
+  /** Literal value instead of the chosen token (e.g. "0" for joined corners). */
+  value?: string
 }
 
 export type OverrideSpec = {
@@ -40,10 +42,46 @@ const slots = (...names: string[]) => names.map((name) => `[data-slot="${name}"]
 // Same svgs the styles size with [&_svg:not([class*='size-'])]:size-4.
 const UNSIZED_SVG = 'svg:not([class*="size-"])'
 
-const radius = (selector: string): OverrideSpec => ({
+// A Button rendered through a Radix trigger (<DropdownMenuTrigger asChild>)
+// takes the trigger's data-slot but keeps the Button's data-variant/data-size.
+const BUTTON_ELEMENTS = ['[data-slot="button"]', '[data-slot$="-trigger"][data-variant][data-size]']
+const buttons = (suffix = "") => BUTTON_ELEMENTS.map((element) => `${element}${suffix}`).join(",\n")
+
+const radius = (elements: string[], { grouped = false } = {}): OverrideSpec => ({
   hint: "Corner radius",
-  targets: [{ selector, declarations: ["border-radius"] }],
+  targets: [
+    { selector: elements.join(",\n"), declarations: ["border-radius"] },
+    ...(grouped ? buttonGroupCorners(elements) : []),
+  ],
 })
+
+const HORIZONTAL_GROUP = '[data-slot="button-group"]:not([data-orientation="vertical"])'
+const VERTICAL_GROUP = '[data-slot="button-group"][data-orientation="vertical"]'
+
+/**
+ * Inside a ButtonGroup, a plain border-radius would round the joined corners
+ * the group squares off, while the styles' important outer-edge utility
+ * (rounded-r-lg! on the last item) would keep the style's radius. Mirror the
+ * group's rules: joined corners stay square, the outer edge takes the token.
+ */
+function buttonGroupCorners(elements: string[]): OverrideTarget[] {
+  const children = (group: string, pseudo: string) =>
+    elements.map((element) => `${group} > ${element}${pseudo}`).join(",\n")
+  const corners = (side: "left" | "right" | "top" | "bottom") =>
+    side === "left" || side === "right"
+      ? [`border-top-${side}-radius`, `border-bottom-${side}-radius`]
+      : [`border-${side}-left-radius`, `border-${side}-right-radius`]
+  const lastItem = ":not(:has(~ [data-slot]))"
+
+  return [
+    { selector: children(HORIZONTAL_GROUP, ":not(:first-child)"), declarations: corners("left"), value: "0" },
+    { selector: children(HORIZONTAL_GROUP, ":not(:last-child)"), declarations: corners("right"), value: "0" },
+    { selector: children(HORIZONTAL_GROUP, lastItem), declarations: corners("right"), important: true },
+    { selector: children(VERTICAL_GROUP, ":not(:first-child)"), declarations: corners("top"), value: "0" },
+    { selector: children(VERTICAL_GROUP, ":not(:last-child)"), declarations: corners("bottom"), value: "0" },
+    { selector: children(VERTICAL_GROUP, lastItem), declarations: corners("bottom"), important: true },
+  ]
+}
 
 const titleText = (selector: string): OverrideSpec => ({
   hint: "Title text size",
@@ -57,19 +95,20 @@ const titleWeight = (selector: string): OverrideSpec => ({
   targets: [{ selector, declarations: ["font-weight"] }],
 })
 
-const INPUTS = slots("input", "textarea", "select-trigger")
+const INPUT_ELEMENTS = ["input", "textarea", "select-trigger"].map((name) => `[data-slot="${name}"]`)
+const INPUTS = INPUT_ELEMENTS.join(",\n")
 
 export const OVERRIDE_COMPONENTS: OverrideComponent[] = [
   {
     id: "button",
     title: "Button",
     properties: {
-      radius: radius(slots("button")),
+      radius: radius(BUTTON_ELEMENTS, { grouped: true }),
       spacing: {
         hint: "Horizontal padding (icon buttons keep theirs)",
         targets: [
           {
-            selector: '[data-slot="button"]:not([data-size^="icon"])',
+            selector: buttons(':not([data-size^="icon"])'),
             declarations: ["padding-inline"],
           },
         ],
@@ -77,9 +116,9 @@ export const OVERRIDE_COMPONENTS: OverrideComponent[] = [
       height: {
         hint: "Default and icon sizes (xs, sm, lg keep the style's)",
         targets: [
-          { selector: '[data-slot="button"][data-size="default"]', declarations: ["height"] },
+          { selector: buttons('[data-size="default"]'), declarations: ["height"] },
           {
-            selector: '[data-slot="button"][data-size="icon"]',
+            selector: buttons('[data-size="icon"]'),
             declarations: ["width", "height"],
           },
         ],
@@ -87,13 +126,13 @@ export const OVERRIDE_COMPONENTS: OverrideComponent[] = [
       icon: {
         hint: "Icons without their own size class",
         targets: [
-          { selector: `[data-slot="button"] ${UNSIZED_SVG}`, declarations: ["width", "height"] },
+          { selector: buttons(` ${UNSIZED_SVG}`), declarations: ["width", "height"] },
         ],
       },
-      text: { hint: "Label text size", targets: [{ selector: slots("button"), declarations: ["font-size"] }] },
+      text: { hint: "Label text size", targets: [{ selector: buttons(), declarations: ["font-size"] }] },
       weight: {
         hint: "Label font weight",
-        targets: [{ selector: slots("button"), declarations: ["font-weight"] }],
+        targets: [{ selector: buttons(), declarations: ["font-weight"] }],
       },
     },
   },
@@ -101,7 +140,7 @@ export const OVERRIDE_COMPONENTS: OverrideComponent[] = [
     id: "input",
     title: "Input & select",
     properties: {
-      radius: radius(INPUTS),
+      radius: radius(INPUT_ELEMENTS, { grouped: true }),
       spacing: {
         hint: "Horizontal padding",
         targets: [{ selector: INPUTS, declarations: ["padding-inline"] }],
@@ -134,7 +173,7 @@ export const OVERRIDE_COMPONENTS: OverrideComponent[] = [
     id: "badge",
     title: "Badge",
     properties: {
-      radius: radius(slots("badge")),
+      radius: radius(['[data-slot="badge"]']),
       spacing: {
         hint: "Horizontal padding",
         targets: [{ selector: slots("badge"), declarations: ["padding-inline"] }],
@@ -156,7 +195,7 @@ export const OVERRIDE_COMPONENTS: OverrideComponent[] = [
     id: "card",
     title: "Card",
     properties: {
-      radius: radius(slots("card")),
+      radius: radius(['[data-slot="card"]']),
       spacing: {
         hint: "Padding and gap between sections",
         targets: [{ selector: slots("card"), declarations: ["--card-spacing"] }],
@@ -169,7 +208,7 @@ export const OVERRIDE_COMPONENTS: OverrideComponent[] = [
     id: "dialog",
     title: "Dialog",
     properties: {
-      radius: radius(slots("dialog-content", "alert-dialog-content")),
+      radius: radius(['[data-slot="dialog-content"]', '[data-slot="alert-dialog-content"]']),
       spacing: {
         hint: "Padding",
         targets: [
@@ -184,7 +223,7 @@ export const OVERRIDE_COMPONENTS: OverrideComponent[] = [
     id: "popover",
     title: "Popover",
     properties: {
-      radius: radius(slots("popover-content")),
+      radius: radius(['[data-slot="popover-content"]']),
       spacing: {
         hint: "Padding",
         targets: [{ selector: slots("popover-content"), declarations: ["padding"] }],
@@ -197,7 +236,7 @@ export const OVERRIDE_COMPONENTS: OverrideComponent[] = [
     id: "bubble",
     title: "Chat bubble",
     properties: {
-      radius: radius(slots("bubble-content")),
+      radius: radius(['[data-slot="bubble-content"]']),
       spacing: {
         hint: "Horizontal padding (vertical keeps the style's)",
         targets: [{ selector: slots("bubble-content"), declarations: ["padding-inline"] }],

@@ -1,85 +1,80 @@
 {
   "cp": {
     "breakpoint": {
-      "desktop-xl": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "2xl": {
         "$extensions": {
           "com.figma.scopes": [
             "WIDTH_HEIGHT"
           ],
-          "com.figma.variableId": "VariableID:107:1965",
+          "com.figma.variableId": "VariableID:52:72",
           "com.figma.codeSyntax": {
-            "WEB": "breakpoint-desktop-xl"
+            "WEB": "breakpoint-2xl"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "px"
         },
         "$type": "dimension",
-        "$value": "{cp.breakpoint.xl}"
+        "$value": "1536px"
       },
-      "laptop-lg": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "lg": {
         "$extensions": {
           "com.figma.scopes": [
             "WIDTH_HEIGHT"
           ],
-          "com.figma.variableId": "VariableID:107:1966",
+          "com.figma.variableId": "VariableID:52:73",
           "com.figma.codeSyntax": {
-            "WEB": "breakpoint-laptop-lg"
+            "WEB": "breakpoint-lg"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "px"
         },
         "$type": "dimension",
-        "$value": "{cp.breakpoint.lg}"
+        "$value": "1024px"
       },
-      "mobile-sm": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "md": {
         "$extensions": {
           "com.figma.scopes": [
             "WIDTH_HEIGHT"
           ],
-          "com.figma.variableId": "VariableID:107:1967",
+          "com.figma.variableId": "VariableID:52:74",
           "com.figma.codeSyntax": {
-            "WEB": "breakpoint-mobile-sm"
+            "WEB": "breakpoint-md"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "px"
         },
         "$type": "dimension",
-        "$value": "{cp.breakpoint.sm}"
+        "$value": "768px"
       },
-      "tablet-md": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "sm": {
         "$extensions": {
           "com.figma.scopes": [
             "WIDTH_HEIGHT"
           ],
-          "com.figma.variableId": "VariableID:107:1968",
+          "com.figma.variableId": "VariableID:52:75",
           "com.figma.codeSyntax": {
-            "WEB": "breakpoint-tablet-md"
+            "WEB": "breakpoint-sm"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "px"
         },
         "$type": "dimension",
-        "$value": "{cp.breakpoint.md}"
+        "$value": "640px"
       },
-      "wide-2xl": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "xl": {
         "$extensions": {
           "com.figma.scopes": [
             "WIDTH_HEIGHT"
           ],
-          "com.figma.variableId": "VariableID:107:1969",
+          "com.figma.variableId": "VariableID:52:76",
           "com.figma.codeSyntax": {
-            "WEB": "breakpoint-wide-2xl"
+            "WEB": "breakpoint-xl"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "px"
         },
         "$type": "dimension",
-        "$value": "{cp.breakpoint.2xl}"
+        "$value": "1280px"
       }
     }
   }

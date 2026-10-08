@@ -1,11 +1,12 @@
 import catalogJson from "@/tokens/generated/catalog.json"
 
 export type TokenTier = "primitive" | "semantic"
+export type TokenMode = "light" | "dark"
 
 export type DesignToken = {
-  /** Dot path as referenced in token files, e.g. "color.bg-default". */
+  /** Dot path as referenced in token files, e.g. "cp.color.bg-default". */
   path: string
-  /** CSS custom property emitted by Style Dictionary, e.g. "--color-bg-default". */
+  /** CSS custom property emitted by Style Dictionary, e.g. "--cp-color-bg-default". */
   cssVar: string
   type: string
   tier: TokenTier
@@ -17,9 +18,31 @@ export type DesignToken = {
   /** Path of the token this one aliases, if any. */
   ref: string | null
   description?: string
+  /** Value and alias under .dark, for tokens with a dark mode. */
+  dark?: { value: string | number; ref: string | null }
 }
 
 export const TOKENS = catalogJson.tokens as DesignToken[]
+
+/** Top-level group every token path starts with, e.g. "cp". */
+export const NAMESPACE = catalogJson.namespace
+
+/** tokenPath("color", "white") -> "cp.color.white" */
+export function tokenPath(...segments: string[]) {
+  return [NAMESPACE, ...segments].join(".")
+}
+
+/** Path without the namespace, for labels: "cp.color.white" -> "color.white". */
+export function localPath(path: string) {
+  return path.startsWith(`${NAMESPACE}.`) ? path.slice(NAMESPACE.length + 1) : path
+}
+
+const COLOR_PRIMITIVE = new RegExp(`^${NAMESPACE}\\.color\\.([a-z]+)-(\\d+)$`)
+
+/** Family of a primitive color path, e.g. "cp.color.blue-500" -> "blue". */
+export function colorFamilyOf(path: string | undefined) {
+  return path?.match(COLOR_PRIMITIVE)?.[1]
+}
 
 export const TOKENS_BY_PATH = new Map(TOKENS.map((token) => [token.path, token]))
 
@@ -27,14 +50,23 @@ export function getToken(path: string | undefined) {
   return path ? TOKENS_BY_PATH.get(path) : undefined
 }
 
-/** Follows aliases to the primitive, e.g. bg-default -> color.white. */
-export function getAliasChain(path: string) {
+/** The token's value as seen in `mode`. */
+export function tokenValue(token: DesignToken | undefined, mode: TokenMode = "light") {
+  return mode === "dark" && token?.dark ? token.dark.value : token?.value
+}
+
+/**
+ * Follows aliases to the primitive, e.g. bg-default -> color.white. In dark
+ * mode, tokens with a dark value follow their dark alias.
+ */
+export function getAliasChain(path: string, mode: TokenMode = "light") {
   const chain: DesignToken[] = []
   let token = getToken(path)
 
   while (token && !chain.includes(token)) {
     chain.push(token)
-    token = getToken(token.ref ?? undefined)
+    const ref = mode === "dark" && token.dark ? token.dark.ref : token.ref
+    token = getToken(ref ?? undefined)
   }
 
   return chain
@@ -46,15 +78,14 @@ export function cssVarFor(path: string) {
 
 /**
  * Color families available in the primitive palette, derived from
- * "color.<family>-<step>" tokens, e.g. { blue: ["color.blue-50", ...] }.
+ * "cp.color.<family>-<step>" tokens, e.g. { blue: ["cp.color.blue-50", ...] }.
  */
 export const COLOR_FAMILIES = TOKENS.reduce<Record<string, string[]>>(
   (families, token) => {
-    const match =
-      token.tier === "primitive" && token.path.match(/^color\.([a-z]+)-(\d+)$/)
+    const family = token.tier === "primitive" ? colorFamilyOf(token.path) : undefined
 
-    if (match) {
-      families[match[1]] = [...(families[match[1]] ?? []), token.path]
+    if (family) {
+      families[family] = [...(families[family] ?? []), token.path]
     }
 
     return families
@@ -71,6 +102,6 @@ function stepOf(path: string) {
 }
 
 export function familyStep(family: string, step: number) {
-  const path = `color.${family}-${step}`
+  const path = tokenPath("color", `${family}-${step}`)
   return TOKENS_BY_PATH.has(path) ? path : undefined
 }

@@ -31,8 +31,8 @@ function initialState(): PreviewState {
     aliases: { ...DEFAULT_CONFIG[mode], ...DEFAULT_CONFIG.global },
     item: (params.get("item") as PreviewItem) ?? "preview",
     chart: isChartType(params.get("chart")) ? (params.get("chart") as ChartType) : "area",
-    font: "font-stack.sans",
-    fontHeading: "font-stack.sans",
+    font: DEFAULT_CONFIG.global["font-sans"],
+    fontHeading: DEFAULT_CONFIG.global["font-heading"],
   }
 }
 

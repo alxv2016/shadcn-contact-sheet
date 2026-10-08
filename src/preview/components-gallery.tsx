@@ -64,7 +64,7 @@ export function ComponentsGallery() {
                   onClick={() => setSlug(e.slug)}
                   data-active={e.slug === entry.slug}
                   className={cn(
-                    "w-full rounded-md px-2 py-1.5 text-left text-sm outline-none hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 focus-visible:ring-sidebar-ring",
+                    "w-full rounded-md px-2 py-1.5 text-left text-sm outline-none hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
                     "data-[active=true]:bg-sidebar-primary data-[active=true]:text-sidebar-primary-foreground"
                   )}
                 >

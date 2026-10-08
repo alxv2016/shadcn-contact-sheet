@@ -1,133 +1,155 @@
 {
   "cp": {
     "radius": {
-      "button": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "2xl": {
         "$extensions": {
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ],
-          "com.figma.variableId": "VariableID:654:3614",
+          "com.figma.variableId": "VariableID:52:58",
           "com.figma.codeSyntax": {
-            "WEB": "radius-card"
+            "WEB": "radius-2xl"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "rem"
         },
         "$type": "dimension",
-        "$value": "{cp.radius.md}"
+        "$value": "1rem"
       },
-      "card": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "3xl": {
         "$extensions": {
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ],
-          "com.figma.variableId": "VariableID:107:2057",
+          "com.figma.variableId": "VariableID:52:59",
           "com.figma.codeSyntax": {
-            "WEB": "radius-card"
+            "WEB": "radius-3xl"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "rem"
         },
         "$type": "dimension",
-        "$value": "{cp.radius.xl}"
+        "$value": "1.5rem"
       },
-      "control": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "4xl": {
         "$extensions": {
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ],
-          "com.figma.variableId": "VariableID:107:2058",
+          "com.figma.variableId": "VariableID:52:60",
           "com.figma.codeSyntax": {
-            "WEB": "radius-control"
+            "WEB": "radius-4xl"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "rem"
         },
         "$type": "dimension",
-        "$value": "{cp.radius.md}"
+        "$value": "2rem"
       },
-      "control-sm": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "full": {
         "$extensions": {
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ],
-          "com.figma.variableId": "VariableID:107:2059",
+          "com.figma.variableId": "VariableID:52:61",
           "com.figma.codeSyntax": {
-            "WEB": "radius-control-sm"
+            "WEB": "radius-full"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "rem"
         },
         "$type": "dimension",
-        "$value": "{cp.radius.sm}"
+        "$value": "624.938rem"
       },
-      "modal": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "lg": {
         "$extensions": {
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ],
-          "com.figma.variableId": "VariableID:107:2061",
+          "com.figma.variableId": "VariableID:52:62",
           "com.figma.codeSyntax": {
-            "WEB": "radius-modal"
+            "WEB": "radius-lg"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "rem"
         },
         "$type": "dimension",
-        "$value": "{cp.radius.xl}"
+        "$value": "0.5rem"
       },
-      "panel": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "md": {
         "$extensions": {
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ],
-          "com.figma.variableId": "VariableID:107:2062",
+          "com.figma.variableId": "VariableID:52:63",
           "com.figma.codeSyntax": {
-            "WEB": "radius-panel"
+            "WEB": "radius-md"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "rem"
         },
         "$type": "dimension",
-        "$value": "{cp.radius.sm}"
+        "$value": "0.375rem"
       },
-      "rounded": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "none": {
         "$extensions": {
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ],
-          "com.figma.variableId": "VariableID:107:2063",
+          "com.figma.variableId": "VariableID:725:2119",
           "com.figma.codeSyntax": {
-            "WEB": "radius-rounded"
+            "WEB": "radius-xs"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "rem"
         },
         "$type": "dimension",
-        "$value": "{cp.radius.full}"
+        "$value": "0rem"
       },
-      "subtle": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "sm": {
         "$extensions": {
           "com.figma.scopes": [
             "CORNER_RADIUS"
           ],
-          "com.figma.variableId": "VariableID:107:2064",
+          "com.figma.variableId": "VariableID:52:64",
           "com.figma.codeSyntax": {
-            "WEB": "radius-subtle"
+            "WEB": "radius-sm"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "rem"
         },
         "$type": "dimension",
-        "$value": "{cp.radius.xs}"
+        "$value": "0.25rem"
+      },
+      "xl": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "CORNER_RADIUS"
+          ],
+          "com.figma.variableId": "VariableID:52:65",
+          "com.figma.codeSyntax": {
+            "WEB": "radius-xl"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "0.75rem"
+      },
+      "xs": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "CORNER_RADIUS"
+          ],
+          "com.figma.variableId": "VariableID:52:66",
+          "com.figma.codeSyntax": {
+            "WEB": "radius-xs"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "0.125rem"
       }
     }
   }

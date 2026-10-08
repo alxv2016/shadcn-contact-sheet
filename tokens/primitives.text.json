@@ -1,0 +1,246 @@
+{
+  "cp": {
+    "text": {
+      "body": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:2",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-body"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "1rem"
+      },
+      "callout": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:3",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-callout"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "0.875rem"
+      },
+      "caption": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:4",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-caption-1"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "0.625rem"
+      },
+      "display-1": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:10",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-extra-large-title-2-5"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "3.625rem"
+      },
+      "display-2": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:9",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-extra-large-title-2-4"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "3.25rem"
+      },
+      "display-3": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:8",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-extra-large-title-2-3"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "2.875rem"
+      },
+      "extra-large-title-1": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:7",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-extra-large-title-2-2"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "2.563rem"
+      },
+      "extra-large-title-2": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:6",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-extra-large-title-2"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "2.25rem"
+      },
+      "extra-large-title-3": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:5",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-extra-large-title"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "2rem"
+      },
+      "footnote": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:11",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-footnote"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "0.688rem"
+      },
+      "headline": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:12",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-headline"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "1.125rem"
+      },
+      "large-title": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:13",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-large-title"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "1.813rem"
+      },
+      "subhead": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:14",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-subhead"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "0.813rem"
+      },
+      "title-1": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:15",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-title-1"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "1.625rem"
+      },
+      "title-2": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:16",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-title-2"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "1.438rem"
+      },
+      "title-3": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "FONT_SIZE"
+          ],
+          "com.figma.variableId": "VariableID:52:17",
+          "com.figma.codeSyntax": {
+            "WEB": "font-size-title-3"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "1.25rem"
+      }
+    }
+  }
+}

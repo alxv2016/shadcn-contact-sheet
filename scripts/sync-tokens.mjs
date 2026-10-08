@@ -1,5 +1,6 @@
-// Copies the design-system token sources (primitive.*.json, semantic.*.json)
-// from a Token Bridge / Style Dictionary package into ./tokens.
+// Copies the design-system token sources (primitives.*.json, semantic.*.json
+// and their dark.* modes) from a Token Bridge / Style Dictionary export into
+// ./tokens. Files removed from the source are not deleted here.
 //
 //   npm run tokens:sync                       # default source below
 //   TOKENS_DIR=/path/to/pkg/tokens npm run tokens:sync
@@ -12,10 +13,10 @@ import { join, resolve } from "node:path"
 
 const sourceDir = resolve(
   process.env.TOKENS_DIR ??
-    join(homedir(), "Desktop/style-dictionary-tokens/tokens")
+    join(homedir(), "Desktop/cp-design-tokens")
 )
 const targetDir = resolve("tokens")
-const DS_FILE = /^(primitives?|semantics?)\..+\.json$/u
+const DS_FILE = /^(dark\.)?(primitives?|semantics?)\..+\.json$/u
 
 if (!existsSync(sourceDir)) {
   console.error(`Token source not found: ${sourceDir}`)

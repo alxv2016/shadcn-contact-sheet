@@ -53,7 +53,7 @@ function Segmented<T extends string>({
           data-active={value === option.value}
           className={cn(
             "h-7 min-w-8 rounded-lg px-2.5 text-xs font-medium text-muted-foreground transition-colors outline-none hover:text-foreground",
-            "focus-visible:ring-1 focus-visible:ring-foreground/50 data-[active=true]:bg-accent data-[active=true]:text-accent-foreground"
+            "data-[active=true]:bg-accent data-[active=true]:text-accent-foreground"
           )}
         >
           {option.label}

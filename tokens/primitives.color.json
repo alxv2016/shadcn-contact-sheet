@@ -1,0 +1,1478 @@
+{
+  "cp": {
+    "color": {
+      "black": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:78",
+          "com.figma.codeSyntax": {
+            "WEB": "color-black"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(0, 0%, 0%)"
+      },
+      "blue-100": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:55",
+          "com.figma.codeSyntax": {
+            "WEB": "color-blue-100"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(216, 97%, 86%)"
+      },
+      "blue-200": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:56",
+          "com.figma.codeSyntax": {
+            "WEB": "color-blue-200"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(216, 98%, 78%)"
+      },
+      "blue-300": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:57",
+          "com.figma.codeSyntax": {
+            "WEB": "color-blue-300"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(216, 99%, 69%)"
+      },
+      "blue-400": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:58",
+          "com.figma.codeSyntax": {
+            "WEB": "color-blue-400"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(216, 98%, 61%)"
+      },
+      "blue-50": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:54",
+          "com.figma.codeSyntax": {
+            "WEB": "color-blue-50"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(215, 100%, 95%)"
+      },
+      "blue-500": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:59",
+          "com.figma.codeSyntax": {
+            "WEB": "color-blue-500"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(216, 98%, 52%)"
+      },
+      "blue-600": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:60",
+          "com.figma.codeSyntax": {
+            "WEB": "color-blue-600"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(216, 88%, 45%)"
+      },
+      "blue-700": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:61",
+          "com.figma.codeSyntax": {
+            "WEB": "color-blue-700"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(216, 86%, 36%)"
+      },
+      "blue-800": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:62",
+          "com.figma.codeSyntax": {
+            "WEB": "color-blue-800"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(216, 84%, 29%)"
+      },
+      "blue-900": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:63",
+          "com.figma.codeSyntax": {
+            "WEB": "color-blue-900"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(216, 81%, 21%)"
+      },
+      "green-100": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:307:50",
+          "com.figma.codeSyntax": {
+            "WEB": "color-green-100"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(137, 67%, 83%)"
+      },
+      "green-200": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:307:51",
+          "com.figma.codeSyntax": {
+            "WEB": "color-green-200"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(137, 67%, 73%)"
+      },
+      "green-300": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:307:52",
+          "com.figma.codeSyntax": {
+            "WEB": "color-green-300"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(137, 67%, 62%)"
+      },
+      "green-400": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:307:53",
+          "com.figma.codeSyntax": {
+            "WEB": "color-green-400"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(137, 67%, 51%)"
+      },
+      "green-50": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:307:49",
+          "com.figma.codeSyntax": {
+            "WEB": "color-green-50"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(135, 67%, 94%)"
+      },
+      "green-500": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:307:54",
+          "com.figma.codeSyntax": {
+            "WEB": "color-green-500"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(137, 100%, 40%)"
+      },
+      "green-600": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:307:55",
+          "com.figma.codeSyntax": {
+            "WEB": "color-green-600"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(137, 99%, 34%)"
+      },
+      "green-700": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:307:56",
+          "com.figma.codeSyntax": {
+            "WEB": "color-green-700"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(137, 97%, 28%)"
+      },
+      "green-800": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:307:57",
+          "com.figma.codeSyntax": {
+            "WEB": "color-green-800"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(137, 96%, 22%)"
+      },
+      "green-900": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:307:58",
+          "com.figma.codeSyntax": {
+            "WEB": "color-green-900"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(138, 95%, 16%)"
+      },
+      "grey-100": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:80",
+          "com.figma.codeSyntax": {
+            "WEB": "color-grey-100"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(0, 0%, 87%)"
+      },
+      "grey-200": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:81",
+          "com.figma.codeSyntax": {
+            "WEB": "color-grey-200"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(0, 0%, 78%)"
+      },
+      "grey-300": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:82",
+          "com.figma.codeSyntax": {
+            "WEB": "color-grey-300"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(0, 0%, 69%)"
+      },
+      "grey-400": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:83",
+          "com.figma.codeSyntax": {
+            "WEB": "color-grey-400"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(0, 0%, 59%)"
+      },
+      "grey-50": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:79",
+          "com.figma.codeSyntax": {
+            "WEB": "color-grey-50"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(0, 0%, 96%)"
+      },
+      "grey-500": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:84",
+          "com.figma.codeSyntax": {
+            "WEB": "color-grey-500"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(0, 0%, 50%)"
+      },
+      "grey-600": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:85",
+          "com.figma.codeSyntax": {
+            "WEB": "color-grey-600"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(0, 0%, 40%)"
+      },
+      "grey-700": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:86",
+          "com.figma.codeSyntax": {
+            "WEB": "color-grey-700"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(0, 0%, 31%)"
+      },
+      "grey-800": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:87",
+          "com.figma.codeSyntax": {
+            "WEB": "color-grey-800"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(0, 0%, 22%)"
+      },
+      "grey-900": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:88",
+          "com.figma.codeSyntax": {
+            "WEB": "color-grey-900"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(0, 0%, 13%)"
+      },
+      "orange-100": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:3",
+          "com.figma.codeSyntax": {
+            "WEB": "color-orange-100"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(20, 100%, 86%)"
+      },
+      "orange-200": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:4",
+          "com.figma.codeSyntax": {
+            "WEB": "color-orange-200"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(21, 100%, 77%)"
+      },
+      "orange-300": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:5",
+          "com.figma.codeSyntax": {
+            "WEB": "color-orange-300"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(21, 100%, 68%)"
+      },
+      "orange-400": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:6",
+          "com.figma.codeSyntax": {
+            "WEB": "color-orange-400"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(21, 100%, 59%)"
+      },
+      "orange-50": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:2",
+          "com.figma.codeSyntax": {
+            "WEB": "color-orange-50"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(19, 100%, 95%)"
+      },
+      "orange-500": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:7",
+          "com.figma.codeSyntax": {
+            "WEB": "color-orange-500"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(21, 100%, 50%)"
+      },
+      "orange-600": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:8",
+          "com.figma.codeSyntax": {
+            "WEB": "color-orange-600"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(21, 99%, 42%)"
+      },
+      "orange-700": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:9",
+          "com.figma.codeSyntax": {
+            "WEB": "color-orange-700"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(21, 98%, 35%)"
+      },
+      "orange-800": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:10",
+          "com.figma.codeSyntax": {
+            "WEB": "color-orange-800"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(20, 96%, 28%)"
+      },
+      "orange-900": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:11",
+          "com.figma.codeSyntax": {
+            "WEB": "color-orange-900"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(20, 94%, 20%)"
+      },
+      "pink-100": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:229:161",
+          "com.figma.codeSyntax": {
+            "WEB": "color-pink-100"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(330, 67%, 84%)"
+      },
+      "pink-200": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:229:162",
+          "com.figma.codeSyntax": {
+            "WEB": "color-pink-200"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(330, 68%, 73%)"
+      },
+      "pink-300": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:229:163",
+          "com.figma.codeSyntax": {
+            "WEB": "color-pink-300"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(330, 68%, 63%)"
+      },
+      "pink-400": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:229:164",
+          "com.figma.codeSyntax": {
+            "WEB": "color-pink-400"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(330, 67%, 52%)"
+      },
+      "pink-50": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:229:160",
+          "com.figma.codeSyntax": {
+            "WEB": "color-pink-50"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(330, 67%, 94%)"
+      },
+      "pink-500": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:229:165",
+          "com.figma.codeSyntax": {
+            "WEB": "color-pink-500"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(330, 95%, 41%)"
+      },
+      "pink-600": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:229:166",
+          "com.figma.codeSyntax": {
+            "WEB": "color-pink-600"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(330, 94%, 35%)"
+      },
+      "pink-700": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:229:167",
+          "com.figma.codeSyntax": {
+            "WEB": "color-pink-700"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(330, 93%, 29%)"
+      },
+      "pink-800": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:229:168",
+          "com.figma.codeSyntax": {
+            "WEB": "color-pink-800"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(330, 91%, 23%)"
+      },
+      "pink-900": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:229:169",
+          "com.figma.codeSyntax": {
+            "WEB": "color-pink-900"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(330, 90%, 16%)"
+      },
+      "purple-100": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:69",
+          "com.figma.codeSyntax": {
+            "WEB": "color-accent-100"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(308, 37%, 80%)"
+      },
+      "purple-200": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:70",
+          "com.figma.codeSyntax": {
+            "WEB": "color-accent-200"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(308, 37%, 66%)"
+      },
+      "purple-300": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:71",
+          "com.figma.codeSyntax": {
+            "WEB": "color-accent-300"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(312, 57%, 56%)"
+      },
+      "purple-400": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:72",
+          "com.figma.codeSyntax": {
+            "WEB": "color-accent-400"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(307, 55%, 40%)"
+      },
+      "purple-50": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:68",
+          "com.figma.codeSyntax": {
+            "WEB": "color-accent-50"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(305, 35%, 93%)"
+      },
+      "purple-500": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:73",
+          "com.figma.codeSyntax": {
+            "WEB": "color-accent-500"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(307, 100%, 27%)"
+      },
+      "purple-600": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:74",
+          "com.figma.codeSyntax": {
+            "WEB": "color-accent-600"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(307, 98%, 23%)"
+      },
+      "purple-700": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:75",
+          "com.figma.codeSyntax": {
+            "WEB": "color-accent-700"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(308, 98%, 19%)"
+      },
+      "purple-800": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:76",
+          "com.figma.codeSyntax": {
+            "WEB": "color-accent-800"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(307, 97%, 15%)"
+      },
+      "purple-900": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:77",
+          "com.figma.codeSyntax": {
+            "WEB": "color-accent-900"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(307, 96%, 11%)"
+      },
+      "red-100": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:45",
+          "com.figma.codeSyntax": {
+            "WEB": "color-red-100"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(354, 70%, 87%)"
+      },
+      "red-200": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:46",
+          "com.figma.codeSyntax": {
+            "WEB": "color-red-200"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(355, 71%, 79%)"
+      },
+      "red-300": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:47",
+          "com.figma.codeSyntax": {
+            "WEB": "color-red-300"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(354, 71%, 70%)"
+      },
+      "red-400": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:48",
+          "com.figma.codeSyntax": {
+            "WEB": "color-red-400"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(354, 70%, 62%)"
+      },
+      "red-50": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:44",
+          "com.figma.codeSyntax": {
+            "WEB": "color-red-50"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(356, 74%, 95%)"
+      },
+      "red-500": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:49",
+          "com.figma.codeSyntax": {
+            "WEB": "color-red-500"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(354, 70%, 54%)"
+      },
+      "red-600": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:50",
+          "com.figma.codeSyntax": {
+            "WEB": "color-red-600"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(354, 61%, 45%)"
+      },
+      "red-700": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:51",
+          "com.figma.codeSyntax": {
+            "WEB": "color-red-700"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(354, 61%, 37%)"
+      },
+      "red-800": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:52",
+          "com.figma.codeSyntax": {
+            "WEB": "color-red-800"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(354, 61%, 29%)"
+      },
+      "red-900": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:53",
+          "com.figma.codeSyntax": {
+            "WEB": "color-red-900"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(354, 61%, 21%)"
+      },
+      "slate-100": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:96:4",
+          "com.figma.codeSyntax": {
+            "WEB": "color-slate-100"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(218, 16%, 87%)"
+      },
+      "slate-200": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:96:5",
+          "com.figma.codeSyntax": {
+            "WEB": "color-slate-200"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(217, 17%, 79%)"
+      },
+      "slate-300": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:96:6",
+          "com.figma.codeSyntax": {
+            "WEB": "color-slate-300"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(215, 16%, 71%)"
+      },
+      "slate-400": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:96:7",
+          "com.figma.codeSyntax": {
+            "WEB": "color-slate-400"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(215, 16%, 63%)"
+      },
+      "slate-50": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:96:3",
+          "com.figma.codeSyntax": {
+            "WEB": "color-slate-50"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(216, 19%, 95%)"
+      },
+      "slate-500": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:96:8",
+          "com.figma.codeSyntax": {
+            "WEB": "color-slate-500"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(215, 18%, 47%)"
+      },
+      "slate-600": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:96:9",
+          "com.figma.codeSyntax": {
+            "WEB": "color-slate-600"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(215, 19%, 40%)"
+      },
+      "slate-700": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:96:10",
+          "com.figma.codeSyntax": {
+            "WEB": "color-slate-700"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(216, 18%, 33%)"
+      },
+      "slate-800": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:96:11",
+          "com.figma.codeSyntax": {
+            "WEB": "color-slate-800"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(215, 18%, 26%)"
+      },
+      "slate-900": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:96:12",
+          "com.figma.codeSyntax": {
+            "WEB": "color-slate-900"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(217, 19%, 19%)"
+      },
+      "white": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:89",
+          "com.figma.codeSyntax": {
+            "WEB": "color-white"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(0, 0%, 100%)"
+      },
+      "yellow-100": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:35",
+          "com.figma.codeSyntax": {
+            "WEB": "color-yellow-100"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(45, 100%, 86%)"
+      },
+      "yellow-200": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:36",
+          "com.figma.codeSyntax": {
+            "WEB": "color-yellow-200"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(45, 100%, 78%)"
+      },
+      "yellow-300": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:37",
+          "com.figma.codeSyntax": {
+            "WEB": "color-yellow-300"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(45, 100%, 69%)"
+      },
+      "yellow-400": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:38",
+          "com.figma.codeSyntax": {
+            "WEB": "color-yellow-400"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(45, 100%, 60%)"
+      },
+      "yellow-50": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:34",
+          "com.figma.codeSyntax": {
+            "WEB": "color-yellow-50"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(46, 100%, 95%)"
+      },
+      "yellow-500": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:39",
+          "com.figma.codeSyntax": {
+            "WEB": "color-yellow-500"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(45, 100%, 51%)"
+      },
+      "yellow-600": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:40",
+          "com.figma.codeSyntax": {
+            "WEB": "color-yellow-600"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(45, 92%, 44%)"
+      },
+      "yellow-700": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:41",
+          "com.figma.codeSyntax": {
+            "WEB": "color-yellow-700"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(45, 90%, 36%)"
+      },
+      "yellow-800": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:42",
+          "com.figma.codeSyntax": {
+            "WEB": "color-yellow-800"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(45, 88%, 28%)"
+      },
+      "yellow-900": {
+        "$description": "Primitive color values should be used only as aliases for semantic values.",
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "EFFECT_COLOR",
+            "STROKE_COLOR"
+          ],
+          "com.figma.variableId": "VariableID:74:43",
+          "com.figma.codeSyntax": {
+            "WEB": "color-yellow-900"
+          }
+        },
+        "$type": "color",
+        "$value": "hsl(45, 85%, 21%)"
+      }
+    }
+  }
+}

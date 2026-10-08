@@ -1,151 +1,311 @@
 {
-  "$description": "shadcn/ui theme variables for .dark as aliases of design-system tokens.",
-  "background": {
-    "$type": "color",
-    "$value": "{color.surface-inverse}"
-  },
-  "foreground": {
-    "$type": "color",
-    "$value": "{color.text-inverse}"
-  },
-  "card": {
-    "$type": "color",
-    "$value": "{color.grey-800}"
-  },
-  "card-foreground": {
-    "$type": "color",
-    "$value": "{color.grey-50}"
-  },
-  "popover": {
-    "$type": "color",
-    "$value": "{color.grey-800}"
-  },
-  "popover-foreground": {
-    "$type": "color",
-    "$value": "{color.grey-50}"
-  },
-  "primary": {
-    "$type": "color",
-    "$value": "{color.blue-500}"
-  },
-  "primary-foreground": {
-    "$type": "color",
-    "$value": "{color.white}"
-  },
-  "secondary": {
-    "$type": "color",
-    "$value": "{color.grey-700}"
-  },
-  "secondary-foreground": {
-    "$type": "color",
-    "$value": "{color.grey-50}"
-  },
+  "$description": "shadcn/ui theme variables for .dark as aliases of design-system tokens. Semantic colors already resolve to their dark values in .dark, so these match the light aliases unless a variable needs a different token in dark mode.",
   "accent": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:241",
+      "com.figma.codeSyntax": {}
+    },
     "$type": "color",
-    "$value": "{color.grey-700}"
+    "$value": "{cp.color.bg-subtle}"
   },
   "accent-foreground": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:242",
+      "com.figma.codeSyntax": {}
+    },
     "$type": "color",
-    "$value": "{color.grey-50}"
+    "$value": "{cp.color.text-default}"
+  },
+  "background": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:229",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.bg-default}"
+  },
+  "border": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:245",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.border-default}"
+  },
+  "card": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:231",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.surface-raised}"
+  },
+  "card-foreground": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:232",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.text-default}"
+  },
+  "chart-1": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:248",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.blue-500}"
+  },
+  "chart-2": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:249",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.blue-700}"
+  },
+  "chart-3": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:250",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.purple-500}"
+  },
+  "chart-4": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:251",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.purple-600}"
+  },
+  "chart-5": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:252",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.purple-800}"
   },
   "destructive": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:243",
+      "com.figma.codeSyntax": {}
+    },
     "$type": "color",
-    "$value": "{color.red-500}"
+    "$value": "{cp.color.bg-status-critical}"
   },
   "destructive-foreground": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:244",
+      "com.figma.codeSyntax": {}
+    },
     "$type": "color",
-    "$value": "{color.white}"
+    "$value": "{cp.color.text-status-danger}"
+  },
+  "foreground": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:230",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.text-default}"
+  },
+  "input": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:246",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.border-default}"
+  },
+  "muted": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:239",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.surface-muted}"
+  },
+  "muted-foreground": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:240",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.text-muted}"
+  },
+  "popover": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:233",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.surface-raised}"
+  },
+  "popover-foreground": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:234",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.text-default}"
+  },
+  "primary": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:235",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.bg-action-primary}"
+  },
+  "primary-foreground": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:236",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.text-inverse}"
+  },
+  "ring": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:247",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.focus-ring}"
+  },
+  "secondary": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:237",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.surface-subtle}"
+  },
+  "secondary-foreground": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:238",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.text-default}"
+  },
+  "sidebar": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:253",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.surface-raised}"
+  },
+  "sidebar-accent": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:257",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.surface-subtle}"
+  },
+  "sidebar-accent-foreground": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:258",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.text-default}"
+  },
+  "sidebar-border": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:259",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.border-default}"
+  },
+  "sidebar-foreground": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:254",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.text-default}"
+  },
+  "sidebar-primary": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:255",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.bg-action-primary}"
+  },
+  "sidebar-primary-foreground": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:256",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.text-ondark}"
+  },
+  "sidebar-ring": {
+    "$extensions": {
+      "com.figma.scopes": [],
+      "com.figma.variableId": "VariableID:116:260",
+      "com.figma.codeSyntax": {}
+    },
+    "$type": "color",
+    "$value": "{cp.color.focus-ring}"
   },
   "warning": {
     "$type": "color",
-    "$value": "{color.yellow-600}"
+    "$value": "{cp.color.bg-status-warning-solid}"
   },
   "warning-foreground": {
     "$type": "color",
-    "$value": "{color.yellow-50}"
-  },
-  "muted": {
-    "$type": "color",
-    "$value": "{color.grey-700}"
-  },
-  "muted-foreground": {
-    "$type": "color",
-    "$value": "{color.grey-400}"
-  },
-  "border": {
-    "$type": "color",
-    "$value": "{color.border-inverse}"
-  },
-  "input": {
-    "$type": "color",
-    "$value": "{color.border-inverse}"
-  },
-  "ring": {
-    "$type": "color",
-    "$value": "{color.blue-400}"
+    "$value": "{cp.color.text-status-warning}"
   },
   "ring-offset": {
     "$type": "color",
-    "$value": "{color.surface-inverse}"
-  },
-  "chart-1": {
-    "$type": "color",
-    "$value": "{color.blue-200}"
-  },
-  "chart-2": {
-    "$type": "color",
-    "$value": "{color.blue-400}"
-  },
-  "chart-3": {
-    "$type": "color",
-    "$value": "{color.blue-500}"
-  },
-  "chart-4": {
-    "$type": "color",
-    "$value": "{color.blue-600}"
-  },
-  "chart-5": {
-    "$type": "color",
-    "$value": "{color.blue-700}"
-  },
-  "sidebar": {
-    "$type": "color",
-    "$value": "{color.grey-800}"
-  },
-  "sidebar-foreground": {
-    "$type": "color",
-    "$value": "{color.grey-50}"
-  },
-  "sidebar-primary": {
-    "$type": "color",
-    "$value": "{color.blue-500}"
-  },
-  "sidebar-primary-foreground": {
-    "$type": "color",
-    "$value": "{color.white}"
-  },
-  "sidebar-accent": {
-    "$type": "color",
-    "$value": "{color.grey-700}"
-  },
-  "sidebar-accent-foreground": {
-    "$type": "color",
-    "$value": "{color.grey-50}"
-  },
-  "sidebar-border": {
-    "$type": "color",
-    "$value": "{color.border-inverse}"
-  },
-  "sidebar-ring": {
-    "$type": "color",
-    "$value": "{color.blue-400}"
+    "$value": "{cp.color.bg-default}"
   },
   "selection": {
     "$type": "color",
-    "$value": "{color.blue-800}"
+    "$value": "{cp.color.bg-selection}"
   },
   "selection-foreground": {
     "$type": "color",
-    "$value": "{color.white}"
+    "$value": "{cp.color.text-selection}"
   }
 }

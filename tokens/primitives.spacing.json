@@ -1,0 +1,186 @@
+{
+  "cp": {
+    "spacing": {
+      "2xl": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.variableId": "VariableID:52:34",
+          "com.figma.codeSyntax": {
+            "WEB": "spacing-2xl"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "1.75rem"
+      },
+      "2xs": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.variableId": "VariableID:52:35",
+          "com.figma.codeSyntax": {
+            "WEB": "spacing-2xs"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "0.25rem"
+      },
+      "3xl": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.variableId": "VariableID:52:36",
+          "com.figma.codeSyntax": {
+            "WEB": "spacing-3xl"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "2rem"
+      },
+      "3xs": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.variableId": "VariableID:52:37",
+          "com.figma.codeSyntax": {
+            "WEB": "spacing-3xs"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "0.125rem"
+      },
+      "4xl": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.variableId": "VariableID:52:38",
+          "com.figma.codeSyntax": {
+            "WEB": "spacing-4xl"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "2.25rem"
+      },
+      "5xl": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.variableId": "VariableID:52:39",
+          "com.figma.codeSyntax": {
+            "WEB": "spacing-5xl"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "2.5rem"
+      },
+      "6xl": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.variableId": "VariableID:52:40",
+          "com.figma.codeSyntax": {
+            "WEB": "spacing-6xl"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "2.75rem"
+      },
+      "lg": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.variableId": "VariableID:52:41",
+          "com.figma.codeSyntax": {
+            "WEB": "spacing-lg"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "1.25rem"
+      },
+      "md": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.variableId": "VariableID:52:42",
+          "com.figma.codeSyntax": {
+            "WEB": "spacing-md"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "1rem"
+      },
+      "sm": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.variableId": "VariableID:52:43",
+          "com.figma.codeSyntax": {
+            "WEB": "spacing-sm"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "0.75rem"
+      },
+      "xl": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.variableId": "VariableID:52:44",
+          "com.figma.codeSyntax": {
+            "WEB": "spacing-xl"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "1.5rem"
+      },
+      "xs": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "GAP"
+          ],
+          "com.figma.variableId": "VariableID:52:45",
+          "com.figma.codeSyntax": {
+            "WEB": "spacing-xs"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "rem"
+        },
+        "$type": "dimension",
+        "$value": "0.5rem"
+      }
+    }
+  }
+}

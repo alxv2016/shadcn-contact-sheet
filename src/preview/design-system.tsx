@@ -1,5 +1,6 @@
 import * as React from "react"
 
+import { tokenPath } from "@/theme/catalog"
 import { type PreviewState } from "@/theme/messages"
 
 // Stand-in for shadcn's useDesignSystemSearchParams(). The ported preview
@@ -16,8 +17,8 @@ const DEFAULT_PARAMS: DesignSystemParams = {
   item: "preview",
   chart: "area",
   aliases: {},
-  font: "font-stack.sans",
-  fontHeading: "font-stack.sans",
+  font: tokenPath("font", "sans"),
+  fontHeading: tokenPath("font", "sans"),
   iconLibrary: "lucide",
 }
 

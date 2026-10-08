@@ -1,69 +1,80 @@
 {
   "cp": {
     "border": {
-      "width-default": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "1": {
         "$extensions": {
           "com.figma.scopes": [
             "STROKE_FLOAT"
           ],
-          "com.figma.variableId": "VariableID:107:1961",
+          "com.figma.variableId": "VariableID:52:67",
           "com.figma.codeSyntax": {
-            "WEB": "border-width-default"
+            "WEB": "border-01"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "px"
         },
         "$type": "dimension",
-        "$value": "{cp.border.1}"
+        "$value": "1px"
       },
-      "width-focus": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "2": {
         "$extensions": {
           "com.figma.scopes": [
             "STROKE_FLOAT"
           ],
-          "com.figma.variableId": "VariableID:107:1962",
+          "com.figma.variableId": "VariableID:52:68",
           "com.figma.codeSyntax": {
-            "WEB": "border-width-focus"
+            "WEB": "border-02"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "px"
         },
         "$type": "dimension",
-        "$value": "{cp.border.2}"
+        "$value": "2px"
       },
-      "width-heavy": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "4": {
         "$extensions": {
           "com.figma.scopes": [
             "STROKE_FLOAT"
           ],
-          "com.figma.variableId": "VariableID:107:1963",
+          "com.figma.variableId": "VariableID:52:69",
           "com.figma.codeSyntax": {
-            "WEB": "border-width-heavy"
+            "WEB": "border-03"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "px"
         },
         "$type": "dimension",
-        "$value": "{cp.border.4}"
+        "$value": "4px"
       },
-      "width-strong": {
-        "$description": "Generated semantic alias. Use this token as a semantic layer over primitives.",
+      "6": {
         "$extensions": {
           "com.figma.scopes": [
             "STROKE_FLOAT"
           ],
-          "com.figma.variableId": "VariableID:107:1964",
+          "com.figma.variableId": "VariableID:52:70",
           "com.figma.codeSyntax": {
-            "WEB": "border-width-strong"
+            "WEB": "border-04"
           },
           "com.tokenbridge.sourceUnit": "px",
           "com.tokenbridge.unit": "px"
         },
         "$type": "dimension",
-        "$value": "{cp.border.2}"
+        "$value": "6px"
+      },
+      "8": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "STROKE_FLOAT"
+          ],
+          "com.figma.variableId": "VariableID:52:71",
+          "com.figma.codeSyntax": {
+            "WEB": "border-05"
+          },
+          "com.tokenbridge.sourceUnit": "px",
+          "com.tokenbridge.unit": "px"
+        },
+        "$type": "dimension",
+        "$value": "8px"
       }
     }
   }

@@ -21,7 +21,7 @@ import { Separator } from "@/registry/radix/ui/separator"
 import { STYLES } from "@/registry/styles"
 import { exportTokensZip } from "@/editor/export-zip"
 import { GetCodeDialog } from "@/editor/get-code-dialog"
-import { OptionPicker, TokenPicker, TokenSwatch } from "@/editor/pickers"
+import { OptionPicker, TokenModeContext, TokenPicker, TokenSwatch } from "@/editor/pickers"
 import { type ThemeEditor } from "@/editor/use-theme-editor"
 import { COLOR_FAMILIES } from "@/theme/catalog"
 import { getAlias, setAlias, type StyleName, type ThemeConfig } from "@/theme/config"
@@ -91,7 +91,7 @@ function Section({
 }) {
   return (
     <Collapsible defaultOpen={defaultOpen} className="group/section">
-      <CollapsibleTrigger className="flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-xs font-medium text-muted-foreground outline-none hover:text-foreground focus-visible:ring-1 focus-visible:ring-foreground/50">
+      <CollapsibleTrigger className="flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-xs font-medium text-muted-foreground outline-none hover:text-foreground">
         {title}
         {count !== undefined && <span className="opacity-60">{count}</span>}
         <ChevronDownIcon className="ml-auto size-3.5 transition-transform group-data-[state=closed]/section:-rotate-90" />
@@ -180,157 +180,159 @@ export function Customizer({ editor }: { editor: ThemeEditor }) {
   }
 
   return (
-    <aside className="dark isolate z-10 flex max-h-[45svh] min-h-0 w-full flex-col self-start overflow-hidden rounded-2xl bg-card/90 text-card-foreground ring-1 ring-foreground/10 backdrop-blur-xl md:h-full md:max-h-full md:w-(--customizer-width)">
-      <header className="flex items-center gap-1 border-b px-3 py-2">
-        <div className="flex rounded-lg bg-muted p-0.5 text-xs font-medium">
-          {(["light", "dark"] as const).map((m) => (
-            <button
-              key={m}
-              type="button"
-              onClick={() => editor.setMode(m)}
-              data-active={mode === m}
-              className="flex items-center gap-1.5 rounded-md px-2 py-1 text-muted-foreground capitalize outline-none data-[active=true]:bg-background data-[active=true]:text-foreground data-[active=true]:shadow-xs"
-            >
-              {m === "light" ? <SunIcon className="size-3.5" /> : <MoonIcon className="size-3.5" />}
-              {m}
-            </button>
-          ))}
-        </div>
-      </header>
-
-      <div className="no-scrollbar flex min-h-0 flex-1 flex-col gap-2.5 overflow-y-auto p-3">
-        <OptionPicker
-          label="Style"
-          options={STYLE_OPTIONS}
-          value={config.style}
-          onChange={(style) => update((c) => ({ ...c, style: style as StyleName }))}
-          onPreview={(style) => preview(style ? { ...config, style: style as StyleName } : null)}
-          adornment={
-            <span className="flex size-4 [&_svg]:size-4">
-              {STYLES.find((s) => s.name === config.style)?.icon}
-            </span>
-          }
-        />
-        <OptionPicker
-          label="Theme"
-          options={FAMILY_OPTIONS}
-          value={familyOf(config.light.primary)}
-          onChange={(family) => update((c) => applyThemeFamily(c, family))}
-          onPreview={(family) => preview(family ? applyThemeFamily(config, family) : null)}
-          adornment={<TokenSwatch path={config[mode].primary} kind="color" />}
-        />
-        <OptionPicker
-          label="Chart Color"
-          options={FAMILY_OPTIONS}
-          value={familyOf(config.light["chart-1"])}
-          onChange={(family) => update((c) => applyChartFamily(c, family))}
-          onPreview={(family) => preview(family ? applyChartFamily(config, family) : null)}
-          adornment={
-            <span className="flex -space-x-1">
-              {CHART_VARS.map((name) => (
-                <TokenSwatch key={name} path={config[mode][name]} kind="color" className="size-3.5" />
-              ))}
-            </span>
-          }
-        />
-        <div className="flex flex-col gap-1">
-          {tokenPicker(RADIUS_VAR, "card", "Radius Multiplier")}
-          <p className="px-2.5 text-[11px] leading-snug text-muted-foreground">
-            Base radius only: each Style sets how much of it each component uses. Some styles, like
-            Lyra and Sera, ignore it.
-          </p>
-        </div>
-        {tokenPicker(TYPOGRAPHY_VARS[0], "card", "Font")}
-        {tokenPicker(TYPOGRAPHY_VARS[1], "card", "Heading")}
-        <div className="flex flex-col gap-1">
-          {tokenPicker(SPACING_VAR, "card", "Spacing Multiplier")}
-          <p className="px-2.5 text-[11px] leading-snug text-muted-foreground">
-            Scales every padding, gap and size. Per-component spacing comes from the Style.
-          </p>
-        </div>
-
-        <Separator className="-mx-3 my-1 w-auto!" />
-
-        <div className="flex flex-col gap-0.5 px-2">
-          <span className="text-xs font-medium">Theme overrides</span>
-          <span className="text-[11px] leading-snug text-muted-foreground">
-            Component radius, spacing, sizes and type that replace the Style's own values.
-            Exported as shadcn.overrides.css.
-          </span>
-        </div>
-        <div className="-mx-1 flex flex-col gap-1">
-          {OVERRIDE_COMPONENTS.map((component) => {
-            const active = OVERRIDE_PROPERTIES.filter(
-              (p) => config.overrides[overrideKey(component, p.id)]
-            ).length
-
-            return (
-              <Section
-                key={component.id}
-                title={component.title}
-                count={active || undefined}
+    <TokenModeContext.Provider value={mode}>
+      <aside className="dark isolate z-10 flex max-h-[45svh] min-h-0 w-full flex-col self-start overflow-hidden rounded-2xl bg-card/90 text-card-foreground ring-1 ring-foreground/10 backdrop-blur-xl md:h-full md:max-h-full md:w-(--customizer-width)">
+        <header className="flex items-center gap-1 border-b px-3 py-2">
+          <div className="flex rounded-lg bg-muted p-0.5 text-xs font-medium">
+            {(["light", "dark"] as const).map((m) => (
+              <button
+                key={m}
+                type="button"
+                onClick={() => editor.setMode(m)}
+                data-active={mode === m}
+                className="flex items-center gap-1.5 rounded-md px-2 py-1 text-muted-foreground capitalize outline-none data-[active=true]:bg-background data-[active=true]:text-foreground data-[active=true]:shadow-xs"
               >
-                {OVERRIDE_PROPERTIES.map((p) => overridePicker(component, p))}
-              </Section>
-            )
-          })}
+                {m === "light" ? <SunIcon className="size-3.5" /> : <MoonIcon className="size-3.5" />}
+                {m}
+              </button>
+            ))}
+          </div>
+        </header>
+
+        <div className="no-scrollbar flex min-h-0 flex-1 flex-col gap-2.5 overflow-y-auto p-3">
+          <OptionPicker
+            label="Style"
+            options={STYLE_OPTIONS}
+            value={config.style}
+            onChange={(style) => update((c) => ({ ...c, style: style as StyleName }))}
+            onPreview={(style) => preview(style ? { ...config, style: style as StyleName } : null)}
+            adornment={
+              <span className="flex size-4 [&_svg]:size-4">
+                {STYLES.find((s) => s.name === config.style)?.icon}
+              </span>
+            }
+          />
+          <OptionPicker
+            label="Theme"
+            options={FAMILY_OPTIONS}
+            value={familyOf(config.light.primary)}
+            onChange={(family) => update((c) => applyThemeFamily(c, family))}
+            onPreview={(family) => preview(family ? applyThemeFamily(config, family) : null)}
+            adornment={<TokenSwatch path={config[mode].primary} kind="color" />}
+          />
+          <OptionPicker
+            label="Chart Color"
+            options={FAMILY_OPTIONS}
+            value={familyOf(config.light["chart-1"])}
+            onChange={(family) => update((c) => applyChartFamily(c, family))}
+            onPreview={(family) => preview(family ? applyChartFamily(config, family) : null)}
+            adornment={
+              <span className="flex -space-x-1">
+                {CHART_VARS.map((name) => (
+                  <TokenSwatch key={name} path={config[mode][name]} kind="color" className="size-3.5" />
+                ))}
+              </span>
+            }
+          />
+          <div className="flex flex-col gap-1">
+            {tokenPicker(RADIUS_VAR, "card", "Radius Multiplier")}
+            <p className="px-2.5 text-[11px] leading-snug text-muted-foreground">
+              Base radius only: each Style sets how much of it each component uses. Some styles, like
+              Lyra and Sera, ignore it.
+            </p>
+          </div>
+          {tokenPicker(TYPOGRAPHY_VARS[0], "card", "Font")}
+          {tokenPicker(TYPOGRAPHY_VARS[1], "card", "Heading")}
+          <div className="flex flex-col gap-1">
+            {tokenPicker(SPACING_VAR, "card", "Spacing Multiplier")}
+            <p className="px-2.5 text-[11px] leading-snug text-muted-foreground">
+              Scales every padding, gap and size. Per-component spacing comes from the Style.
+            </p>
+          </div>
+
+          <Separator className="-mx-3 my-1 w-auto!" />
+
+          <div className="flex flex-col gap-0.5 px-2">
+            <span className="text-xs font-medium">Theme overrides</span>
+            <span className="text-[11px] leading-snug text-muted-foreground">
+              Component radius, spacing, sizes and type that replace the Style's own values.
+              Exported as shadcn.overrides.css.
+            </span>
+          </div>
+          <div className="-mx-1 flex flex-col gap-1">
+            {OVERRIDE_COMPONENTS.map((component) => {
+              const active = OVERRIDE_PROPERTIES.filter(
+                (p) => config.overrides[overrideKey(component, p.id)]
+              ).length
+
+              return (
+                <Section
+                  key={component.id}
+                  title={component.title}
+                  count={active || undefined}
+                >
+                  {OVERRIDE_PROPERTIES.map((p) => overridePicker(component, p))}
+                </Section>
+              )
+            })}
+          </div>
+
+          <Separator className="-mx-3 my-1 w-auto!" />
+
+          <div className="flex items-baseline justify-between px-2">
+            <span className="text-xs font-medium">Colors</span>
+            <span className="text-[11px] text-muted-foreground">{mode} mode</span>
+          </div>
+          <div className="-mx-1 flex flex-col gap-1">
+            {COLOR_GROUPS.map((group, index) => (
+              <VarGroup
+                key={group.id}
+                group={group}
+                defaultOpen={index < 3}
+                renderVar={(v) => tokenPicker(v, "row")}
+              />
+            ))}
+            <VarGroup group={SHADOW_GROUP} renderVar={(v) => tokenPicker(v, "row")} />
+            <VarGroup group={FOCUS_GROUP} renderVar={(v) => tokenPicker(v, "row")} />
+          </div>
         </div>
 
-        <Separator className="-mx-3 my-1 w-auto!" />
-
-        <div className="flex items-baseline justify-between px-2">
-          <span className="text-xs font-medium">Colors</span>
-          <span className="text-[11px] text-muted-foreground">{mode} mode</span>
-        </div>
-        <div className="-mx-1 flex flex-col gap-1">
-          {COLOR_GROUPS.map((group, index) => (
-            <VarGroup
-              key={group.id}
-              group={group}
-              defaultOpen={index < 3}
-              renderVar={(v) => tokenPicker(v, "row")}
-            />
-          ))}
-          <VarGroup group={SHADOW_GROUP} renderVar={(v) => tokenPicker(v, "row")} />
-          <VarGroup group={FOCUS_GROUP} renderVar={(v) => tokenPicker(v, "row")} />
-        </div>
-      </div>
-
-      <footer className="flex flex-col gap-2 border-t p-3">
-        <div className="flex gap-2">
+        <footer className="flex flex-col gap-2 border-t p-3">
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              className="flex-1"
+              onClick={() => update((c) => randomize(c))}
+            >
+              <ShuffleIcon />
+              Shuffle
+            </Button>
+            <Button
+              variant="outline"
+              className="flex-1"
+              disabled={editor.isDefault}
+              onClick={editor.reset}
+            >
+              <RotateCcwIcon />
+              Reset
+            </Button>
+          </div>
           <Button
-            variant="outline"
-            className="flex-1"
-            onClick={() => update((c) => randomize(c))}
+            variant="secondary"
+            onClick={() =>
+              toast.promise(exportTokensZip(config), {
+                loading: "Packaging theme…",
+                success: (count) => `Theme saved: ${count} files downloaded as a .zip`,
+                error: (error) => `Save failed: ${String(error)}`,
+              })
+            }
           >
-            <ShuffleIcon />
-            Shuffle
+            <SaveIcon />
+            Save Theme
           </Button>
-          <Button
-            variant="outline"
-            className="flex-1"
-            disabled={editor.isDefault}
-            onClick={editor.reset}
-          >
-            <RotateCcwIcon />
-            Reset
-          </Button>
-        </div>
-        <Button
-          variant="secondary"
-          onClick={() =>
-            toast.promise(exportTokensZip(config), {
-              loading: "Packaging theme…",
-              success: (count) => `Theme saved: ${count} files downloaded as a .zip`,
-              error: (error) => `Save failed: ${String(error)}`,
-            })
-          }
-        >
-          <SaveIcon />
-          Save Theme
-        </Button>
-        <GetCodeDialog config={config} />
-      </footer>
-    </aside>
+          <GetCodeDialog config={config} />
+        </footer>
+      </aside>
+    </TokenModeContext.Provider>
   )
 }

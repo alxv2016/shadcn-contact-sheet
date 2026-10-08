@@ -40,7 +40,7 @@ export function ElevationScale() {
               <div className="flex max-w-full flex-col items-center">
                 <span className="font-mono text-[0.65rem]">{shadow.name}</span>
                 <span className="max-w-full truncate font-mono text-[0.6rem] text-muted-foreground">
-                  {params.aliases[shadow.name]?.replace(/^elevation\./, "") ?? "—"}
+                  {params.aliases[shadow.name]?.split(".").slice(-2).join(".") ?? "—"}
                 </span>
               </div>
             </div>

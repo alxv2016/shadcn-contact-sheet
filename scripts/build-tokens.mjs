@@ -2,7 +2,9 @@
 //
 // Outputs (src/tokens/generated/):
 //   tokens.css          DS tokens as CSS custom properties. Semantic tokens keep
-//                       their aliases as var() references to primitives.
+//                       their aliases as var() references to primitives. Dark
+//                       mode files (dark.semantic.*.json) re-declare their
+//                       tokens under .dark.
 //   shadcn.theme.css    The shadcn theme token mapping: every shadcn/ui theme
 //                       variable (:root + .dark) as an alias of a DS token,
 //                       grouped and annotated with what it resolves to. From
@@ -15,7 +17,8 @@
 //                       so Tailwind only contributes utility classes.
 //
 // Variable names follow the Token Bridge convention (path segments joined
-// with "-", no prefix), so CSS generated here is interchangeable with the
+// with "-", including the "cp" namespace: cp.color.bg-default ->
+// --cp-color-bg-default), so CSS generated here is interchangeable with the
 // output of the original token package.
 import {
   existsSync,
@@ -36,11 +39,16 @@ import {
 const TOKENS_DIR = "tokens"
 const BUILD_PATH = "src/tokens/generated/"
 
-// The Token Bridge export authored rem values against a 22px root
-// ("Base unit for rem conversion: 22"). Browsers default to a 16px root, so
-// rem dimensions are rebased here to keep the px sizes designed in Figma.
-const SOURCE_REM_BASE = Number(process.env.TOKENS_SOURCE_REM_BASE ?? 22)
+// Base unit the Token Bridge export authored rem values against. The cp
+// export uses 16px (body = 1rem), matching the browser default, so rem values
+// pass through unchanged; set TOKENS_SOURCE_REM_BASE for exports authored
+// against another root (the previous DS used 22).
+const SOURCE_REM_BASE = Number(process.env.TOKENS_SOURCE_REM_BASE ?? 16)
 const TARGET_REM_BASE = Number(process.env.TOKENS_TARGET_REM_BASE ?? 16)
+
+// Top-level group every token sits under (cp.color.*, cp.radius.*…). Token
+// groups (color, radius…) are the segment after it.
+const NAMESPACE = process.env.TOKENS_NAMESPACE ?? "cp"
 
 const ADAPTER_FILES = {
   light: `${TOKENS_DIR}/shadcn.semantic.json`,
@@ -49,10 +57,23 @@ const ADAPTER_FILES = {
 }
 
 const DS_FILE = /^(primitives?|semantics?)\..+\.json$/u
-const dsFiles = readdirSync(TOKENS_DIR)
+// dark.semantic.color.json holds the dark mode of semantic.color.json.
+const DARK_FILE = /^dark\.((primitives?|semantics?)\..+\.json)$/u
+const tokenFiles = readdirSync(TOKENS_DIR).sort()
+const dsFiles = tokenFiles
   .filter((file) => DS_FILE.test(file))
-  .sort()
   .map((file) => `${TOKENS_DIR}/${file}`)
+const darkFiles = new Map(
+  tokenFiles
+    .map((file) => file.match(DARK_FILE))
+    .filter(Boolean)
+    .map(([file, lightFile]) => [`${TOKENS_DIR}/${lightFile}`, `${TOKENS_DIR}/${file}`])
+)
+
+// ["cp", "color", "bg-default"] -> ["color", "bg-default"]
+function segmentsOf(path) {
+  return path[0] === NAMESPACE ? path.slice(1) : path
+}
 
 function sanitizeSegment(value) {
   return String(value ?? "")
@@ -123,7 +144,7 @@ StyleDictionary.registerFormat({
         cssVar: `--${token.name}`,
         type: token.$type ?? token.type ?? "string",
         tier: tierOf(token.filePath),
-        group: token.path[0],
+        group: segmentsOf(token.path)[0],
         value,
         px: remMatch
           ? Math.round(Number(remMatch[1]) * TARGET_REM_BASE * 100) / 100
@@ -133,7 +154,21 @@ StyleDictionary.registerFormat({
       }
     })
 
-    return `${JSON.stringify({ remBase: TARGET_REM_BASE, tokens }, null, 2)}\n`
+    return `${JSON.stringify({ remBase: TARGET_REM_BASE, namespace: NAMESPACE, tokens }, null, 2)}\n`
+  },
+})
+
+// Dark values of the tokens a dark file re-declares: { path: { value, ref } }.
+StyleDictionary.registerFormat({
+  name: "contact-sheet/catalog-dark",
+  format: ({ dictionary }) => {
+    const overrides = Object.fromEntries(
+      dictionary.allTokens.map((token) => [
+        token.path.join("."),
+        { value: token.$value ?? token.value, ref: referenceOf(token) },
+      ])
+    )
+    return `${JSON.stringify(overrides, null, 2)}\n`
   },
 })
 
@@ -162,13 +197,62 @@ const ds = new StyleDictionary(
 )
 await ds.buildAllPlatforms()
 
+// Dark mode: the same sources with each light file swapped for its dark
+// counterpart, keeping only the tokens the dark files declare.
+const DARK_CSS = "tokens.dark.css"
+const DARK_CATALOG = "catalog.dark.json"
+let darkCatalog = {}
+
+if (darkFiles.size) {
+  const fromDarkFile = (token) => [...darkFiles.values()].includes(token.filePath)
+  const dark = new StyleDictionary(
+    {
+      source: dsFiles.map((file) => darkFiles.get(file) ?? file),
+      log: { verbosity: "silent" },
+      platforms: {
+        css: {
+          transforms: TRANSFORMS,
+          buildPath: BUILD_PATH,
+          files: [
+            {
+              destination: DARK_CSS,
+              format: "css/variables",
+              filter: fromDarkFile,
+              options: { outputReferences: true, selector: ".dark" },
+            },
+            { destination: DARK_CATALOG, format: "contact-sheet/catalog-dark", filter: fromDarkFile },
+          ],
+        },
+      },
+    },
+    { verbosity: "silent" }
+  )
+  await dark.buildAllPlatforms()
+
+  const lightCss = readFileSync(`${BUILD_PATH}tokens.css`, "utf8")
+  // Drop the second "Do not edit" header Style Dictionary adds.
+  const darkCss = readFileSync(`${BUILD_PATH}${DARK_CSS}`, "utf8").replace(/^\/\*\*[\s\S]*?\*\/\s*/u, "")
+  writeFileSync(`${BUILD_PATH}tokens.css`, `${lightCss.trimEnd()}\n\n${darkCss}`)
+  darkCatalog = JSON.parse(readFileSync(`${BUILD_PATH}${DARK_CATALOG}`, "utf8"))
+}
+rmSync(`${BUILD_PATH}${DARK_CSS}`, { force: true })
+rmSync(`${BUILD_PATH}${DARK_CATALOG}`, { force: true })
+
+// Each catalog token carries its dark value, when it has one.
+const catalogFile = `${BUILD_PATH}catalog.json`
+const catalog = JSON.parse(readFileSync(catalogFile, "utf8"))
+for (const token of catalog.tokens) {
+  if (darkCatalog[token.path]) token.dark = darkCatalog[token.path]
+}
+writeFileSync(catalogFile, `${JSON.stringify(catalog, null, 2)}\n`)
+
 // ---------------------------------------------------------------------------
 // Tailwind theme: the design system is the single source of truth.
 //
 // 1. Every default namespace the DS covers is reset with `initial`, so none
 //    of Tailwind's own values reach the CSS.
-// 2. DS tokens are exposed as utilities under their own names
-//    (bg-blue-500, text-body, rounded-card, shadow-raised, gap-stack-md…).
+// 2. DS tokens are exposed as utilities under their own names, without the
+//    namespace (bg-blue-500, text-body, rounded-card, shadow-raised, gap-gap-md…).
 // 3. Tailwind's scale names that components rely on (text-sm, font-medium,
 //    leading-tight…) are re-pointed at the nearest DS token, but only when it
 //    is within COMPAT_TOLERANCE of Tailwind's default; others are dropped.
@@ -240,7 +324,7 @@ function buildTailwindTheme(tokens) {
   const defaults = readTailwindDefaults()
   const group = (name, tier) =>
     tokens.filter((t) => t.group === name && (!tier || t.tier === tier))
-  const leaf = (token) => token.path.split(".").slice(1).join("-")
+  const leaf = (token) => segmentsOf(token.path.split(".")).slice(1).join("-")
   const defaultKeys = (namespace) =>
     [...defaults.keys()]
       .filter((key) => key.startsWith(`${namespace}-`) && !key.includes("--"))
@@ -286,11 +370,11 @@ function buildTailwindTheme(tokens) {
 
   section(
     "Colors: every DS color token",
-    tokens.filter((t) => t.type === "color").map((t) => `  ${t.cssVar}: var(${t.cssVar});`)
+    tokens.filter((t) => t.type === "color").map((t) => `  --color-${leaf(t)}: var(${t.cssVar});`)
   )
 
-  const fontSizes = group("font-size")
-  const lineHeights = group("line-height")
+  const fontSizes = group("text")
+  const lineHeights = group("leading")
   section("Font sizes: DS names", fontSizes.map((t) => `  --text-${leaf(t)}: var(${t.cssVar});`))
   section(
     "Font sizes: Tailwind names -> nearest DS token",
@@ -347,14 +431,14 @@ function buildTailwindTheme(tokens) {
   )
 
   section(
-    "Shadows: DS elevation names (xs-2xl come from the shadcn shadow aliases)",
-    group("elevation", "semantic").map((t) => `  --shadow-${leaf(t)}: var(${t.cssVar});`)
+    "Shadows: DS semantic names (xs-2xl come from the shadcn shadow aliases)",
+    group("shadow", "semantic").map((t) => `  --shadow-${leaf(t)}: var(${t.cssVar});`)
   )
 
   // Only semantic spacing: primitive names (sm, lg…) would hijack
   // max-w-lg & co., which fall back to the spacing namespace.
   section(
-    "Spacing: DS semantic names (gap-stack-md, p-inset-card…)",
+    "Spacing: DS semantic names (gap-gap-md…)",
     group("spacing", "semantic").map((t) => `  --spacing-${leaf(t)}: var(${t.cssVar});`)
   )
 
@@ -374,7 +458,6 @@ ${literal.join("\n")}
 `
 }
 
-const catalog = JSON.parse(readFileSync(`${BUILD_PATH}catalog.json`, "utf8"))
 writeFileSync(`${BUILD_PATH}tailwind.theme.css`, buildTailwindTheme(catalog.tokens))
 
 // ---------------------------------------------------------------------------
@@ -384,7 +467,7 @@ writeFileSync(`${BUILD_PATH}tailwind.theme.css`, buildTailwindTheme(catalog.toke
 
 const tokensByPath = new Map(catalog.tokens.map((token) => [token.path, token]))
 
-// { "primary": { "$value": "{color.bg-action-primary}" } } -> { primary: "color.bg-action-primary" }
+// { "primary": { "$value": "{cp.color.bg-action-primary}" } } -> { primary: "cp.color.bg-action-primary" }
 function readAliases(file) {
   if (!existsSync(file)) return {}
   const aliases = {}
@@ -404,16 +487,19 @@ function readAliases(file) {
   return aliases
 }
 
-function resolveAlias(path) {
+// In dark mode, tokens with a dark value follow their dark alias instead.
+function resolveAlias(path, mode = "light") {
   const chain = []
+  const view = (token) => (mode === "dark" && token.dark) || token
   for (let token = tokensByPath.get(path); token && !chain.includes(token); ) {
     chain.push(token)
-    token = token.ref ? tokensByPath.get(token.ref) : undefined
+    const ref = view(token).ref
+    token = ref ? tokensByPath.get(ref) : undefined
   }
   return {
     cssVar: tokensByPath.get(path).cssVar,
     chain: chain.map((token) => token.path),
-    value: chain.length ? String(chain.at(-1).value) : undefined,
+    value: chain.length ? String(view(chain.at(-1)).value) : undefined,
   }
 }
 

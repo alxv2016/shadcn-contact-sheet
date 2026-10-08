@@ -6,10 +6,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/registry/radix/ui/card"
-import { TOKENS } from "@/theme/catalog"
+import { localPath, TOKENS } from "@/theme/catalog"
 
-// The design system's type scale, straight from the font-size, font-weight
-// and line-height tokens (rendered through their CSS variables).
+// The design system's type scale, straight from the text, font-weight and
+// leading tokens (rendered through their CSS variables).
 
 const byPx = (group: string) =>
   TOKENS.filter((t) => t.group === group).sort((a, b) => (b.px ?? 0) - (a.px ?? 0))
@@ -17,10 +17,10 @@ const byPx = (group: string) =>
 const byValue = (group: string) =>
   TOKENS.filter((t) => t.group === group).sort((a, b) => Number(a.value) - Number(b.value))
 
-const FONT_SIZES = byPx("font-size")
+const FONT_SIZES = byPx("text")
 const FONT_WEIGHTS = byValue("font-weight")
-const LINE_HEIGHTS = byValue("line-height")
-const FONT_STACK = TOKENS.find((t) => t.group === "font-stack")
+const LINE_HEIGHTS = byValue("leading")
+const FONT_STACK = TOKENS.find((t) => t.group === "font")
 const HEADING_MIN_PX = 20
 
 // "extra-large-title-2-3" -> "XL Title 2.3", "title-1" -> "Title 1"
@@ -55,7 +55,7 @@ export function TypographyScaleCard({ className }: { className?: string }) {
               className="flex min-w-0 flex-col gap-1 border-b border-border/60 py-2.5 first:pt-0 last:border-0 last:pb-0"
             >
               <div className="flex items-baseline justify-between gap-2 font-mono text-[10px] text-muted-foreground">
-                <span>{token.path}</span>
+                <span>{localPath(token.path)}</span>
                 <span className="shrink-0">
                   {token.px}px · {token.value}
                 </span>
@@ -79,7 +79,7 @@ export function TypographyScaleCard({ className }: { className?: string }) {
                 Aa
               </span>
               <span className="font-mono text-[10px] text-muted-foreground">
-                {token.path.replace("font-weight.", "")} {token.value}
+                {token.path.split(".").pop()} {token.value}
               </span>
             </div>
           ))}

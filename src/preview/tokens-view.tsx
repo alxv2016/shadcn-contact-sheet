@@ -23,7 +23,7 @@ import { Badge } from "@/registry/radix/ui/badge"
 import { Button } from "@/registry/radix/ui/button"
 import { Input } from "@/registry/radix/ui/input"
 import { Switch } from "@/registry/radix/ui/switch"
-import { getAliasChain, getToken } from "@/theme/catalog"
+import { getAliasChain, getToken, tokenValue } from "@/theme/catalog"
 import { contrast } from "@/theme/operations"
 import { SHADOW_GROUP } from "@/theme/schema"
 import {
@@ -43,8 +43,8 @@ function useAliases() {
 }
 
 function AliasChain({ name }: { name: string }) {
-  const aliases = useAliases()
-  const chain = aliases[name] ? getAliasChain(aliases[name]) : []
+  const [{ aliases, mode }] = useDesignSystemSearchParams()
+  const chain = aliases[name] ? getAliasChain(aliases[name], mode) : []
   const resolved = chain.at(-1)
 
   return (
@@ -60,7 +60,7 @@ function AliasChain({ name }: { name: string }) {
       ))}
       {resolved && (
         <span className="text-muted-foreground">
-          = {resolved.px !== undefined ? `${resolved.px}px` : String(resolved.value)}
+          = {resolved.px !== undefined ? `${resolved.px}px` : String(tokenValue(resolved, mode))}
         </span>
       )}
     </div>
@@ -189,7 +189,7 @@ function ShadowsCard() {
     <Card>
       <CardHeader>
         <CardTitle>Shadows</CardTitle>
-        <CardDescription>Tailwind shadow scale aliased to elevation tokens.</CardDescription>
+        <CardDescription>Tailwind shadow scale aliased to shadow tokens.</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-6">
         <div className="grid grid-cols-3 gap-x-4 gap-y-6 rounded-lg bg-muted p-5">
