@@ -1,4 +1,5 @@
 import { AccountAccess } from "@/registry/radix/blocks/preview-02/cards/account-access"
+import { AssistantChat } from "@/registry/radix/blocks/preview-02/cards/assistant-chat"
 import { CardOverview } from "@/registry/radix/blocks/preview-02/cards/card-overview"
 import { ClaimableBalance } from "@/registry/radix/blocks/preview-02/cards/claimable-balance"
 import { ContributionHistory } from "@/registry/radix/blocks/preview-02/cards/contribution-history"
@@ -13,9 +14,11 @@ import { IndexInvesting } from "@/registry/radix/blocks/preview-02/cards/index-i
 import { KitchenIsland } from "@/registry/radix/blocks/preview-02/cards/kitchen-island"
 import { LoadingCard } from "@/registry/radix/blocks/preview-02/cards/loading-card"
 import { NewMilestone } from "@/registry/radix/blocks/preview-02/cards/new-milestone"
+import { NotificationStack } from "@/registry/radix/blocks/preview-02/cards/notification-stack"
 import { NotificationSettings } from "@/registry/radix/blocks/preview-02/cards/notification-settings"
 import { Payments } from "@/registry/radix/blocks/preview-02/cards/payments"
 import { PayoutThreshold } from "@/registry/radix/blocks/preview-02/cards/payout-threshold"
+import { PlanPicker } from "@/registry/radix/blocks/preview-02/cards/plan-picker"
 import { PowerUsage } from "@/registry/radix/blocks/preview-02/cards/power-usage"
 import { Preferences } from "@/registry/radix/blocks/preview-02/cards/preferences"
 import { QrConnect } from "@/registry/radix/blocks/preview-02/cards/qr-connect"
@@ -29,6 +32,7 @@ import { SidebarNav } from "@/registry/radix/blocks/preview-02/cards/sidebar-nav
 import { SocialLinks } from "@/registry/radix/blocks/preview-02/cards/social-links"
 import { StockPerformance } from "@/registry/radix/blocks/preview-02/cards/stock-performance"
 import { SyncingState } from "@/registry/radix/blocks/preview-02/cards/syncing-state"
+import { TaskBoard } from "@/registry/radix/blocks/preview-02/cards/task-board"
 import { TransferFunds } from "@/registry/radix/blocks/preview-02/cards/transfer-funds"
 import { UpcomingPayments } from "@/registry/radix/blocks/preview-02/cards/upcoming-payments"
 
@@ -52,6 +56,7 @@ export default function Preview02Example() {
             <PayoutThreshold />
             <ClaimableBalance />
             <Preferences />
+            <NotificationStack />
             <SavingsProgress />
             <KitchenIsland />
           </div>
@@ -73,6 +78,7 @@ export default function Preview02Example() {
           <div className="flex flex-col p-1 [contain-intrinsic-size:380px_1200px] [content-visibility:auto]">
             <AccountAccess />
             <CardOverview />
+            <PlanPicker />
             <TransferFunds />
             <CoverArt />
             <LoadingCard />
@@ -80,6 +86,7 @@ export default function Preview02Example() {
           <div className="flex flex-col p-1 [contain-intrinsic-size:380px_1200px] [content-visibility:auto]">
             <ReceivingMethod />
             <PowerUsage />
+            <TaskBoard />
             <EmptyConnectBank />
             <UpcomingPayments />
             <RollerShades />
@@ -87,6 +94,7 @@ export default function Preview02Example() {
           <div className="flex flex-col p-1 [contain-intrinsic-size:380px_1200px] [content-visibility:auto]">
             <StockPerformance />
             <EmptyExploreCatalog />
+            <AssistantChat />
             <NewMilestone />
             <SocialLinks />
             <NotificationSettings />

@@ -8,6 +8,7 @@ import { BookAppointment } from "@/registry/radix/blocks/preview/cards/book-appo
 import { CodespacesCard } from "@/registry/radix/blocks/preview/cards/codespaces-card"
 import { ContributionsActivity } from "@/registry/radix/blocks/preview/cards/contributions-activity"
 import { Contributors } from "@/registry/radix/blocks/preview/cards/contributors"
+import { ElevationScale } from "@/registry/radix/blocks/preview/cards/elevation-scale"
 import { EnvironmentVariables } from "@/registry/radix/blocks/preview/cards/environment-variables"
 import { FeedbackForm } from "@/registry/radix/blocks/preview/cards/feedback-form"
 import { FileUpload } from "@/registry/radix/blocks/preview/cards/file-upload"
@@ -20,12 +21,14 @@ import { NoTeamMembers } from "@/registry/radix/blocks/preview/cards/no-team-mem
 import { NotFound } from "@/registry/radix/blocks/preview/cards/not-found"
 import { ObservabilityCard } from "@/registry/radix/blocks/preview/cards/observability-card"
 import { PieChartCard } from "@/registry/radix/blocks/preview/cards/pie-chart-card"
+import { ProjectFiles } from "@/registry/radix/blocks/preview/cards/project-files"
 import { ReportBug } from "@/registry/radix/blocks/preview/cards/report-bug"
 import { ShippingAddress } from "@/registry/radix/blocks/preview/cards/shipping-address"
 import { Shortcuts } from "@/registry/radix/blocks/preview/cards/shortcuts"
 import { SkeletonLoading } from "@/registry/radix/blocks/preview/cards/skeleton-loading"
 import { SleepReport } from "@/registry/radix/blocks/preview/cards/sleep-report"
 import { StyleOverview } from "@/registry/radix/blocks/preview/cards/style-overview"
+import { TeamChat } from "@/registry/radix/blocks/preview/cards/team-chat"
 import { TypographySpecimen } from "@/registry/radix/blocks/preview/cards/typography-specimen"
 import { UIElements } from "@/registry/radix/blocks/preview/cards/ui-elements"
 import { UsageCard } from "@/registry/radix/blocks/preview/cards/usage-card"
@@ -43,6 +46,7 @@ export default function PreviewExample() {
           <div className="flex flex-col p-1 [contain-intrinsic-size:380px_1200px] [content-visibility:auto]">
             <StyleOverview />
             <TypographySpecimen />
+            <ElevationScale />
             <div className="md:hidden">
               <UIElements />
             </div>
@@ -61,6 +65,7 @@ export default function PreviewExample() {
             <EnvironmentVariables />
             <BarChartCard />
             <InviteTeam />
+            <ProjectFiles />
             <ActivateAgentDialog />
           </div>
           <div className="flex flex-col p-1 [contain-intrinsic-size:380px_1200px] [content-visibility:auto]">
@@ -73,6 +78,7 @@ export default function PreviewExample() {
           <div className="flex flex-col p-1 [contain-intrinsic-size:380px_1200px] [content-visibility:auto]">
             <FeedbackForm />
             <BookAppointment />
+            <TeamChat />
             <SleepReport />
             <GithubProfile />
           </div>
