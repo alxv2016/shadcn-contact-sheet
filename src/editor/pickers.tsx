@@ -34,8 +34,7 @@ export function TokenSwatch({
   kind: TokenKind
   className?: string
 }) {
-  // Resolve to the primitive: a semantic token's own catalog value can be stale.
-  const value = String((path ? getAliasChain(path).at(-1) : undefined)?.value ?? getToken(path)?.value ?? "")
+  const value = String(getToken(path)?.value ?? "")
   const base = "inline-flex size-4 shrink-0 items-center justify-center"
 
   switch (kind) {

@@ -93,10 +93,12 @@ StyleDictionary.registerTransform({
   transform: (token) => token.path.map(sanitizeSegment).filter(Boolean).join("-"),
 })
 
+// Not transitive: only literal rem values are rebased. A token that aliases
+// another (radius.control -> radius.lg) inherits the already-rebased value;
+// re-running the transform on it would rebase it twice.
 StyleDictionary.registerTransform({
   name: "contact-sheet/rem-rebase",
   type: "value",
-  transitive: true,
   filter: (token) =>
     typeof (token.$value ?? token.value) === "string" &&
     /^-?\d*\.?\d+rem$/u.test(token.$value ?? token.value),

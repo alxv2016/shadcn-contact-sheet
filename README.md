@@ -149,7 +149,7 @@ src/
   editor/                   theme editor (customizer, pickers, Get Code, Save Theme)
   preview/                  preview iframe (galleries, charts, Tokens view)
   theme/                    token catalog, shadcn variable list, config, CSS formatting
-  styles/                   shared Tailwind bridge, focus ring, style overrides
+  styles/                   shared Tailwind bridge, focus ring
   registry/                 shadcn/ui components, examples, charts and styles
   tokens/generated/         build output (git-ignored)
 ```
